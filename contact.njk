@@ -125,6 +125,17 @@ eleventyComputed:
 <div><h3>LinkedIn</h3><p><a href="{{ contact.info.linkedin_url }}" target="_blank" rel="noopener">{{ contact.info.linkedin_label }}</a></p></div>
 </div>
 
+<div class="mission-card">
+<div class="mission-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6l5 5v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M9 12l2 2 4-4"/></svg></div>
+<div>
+<h3>{{ contact.info.legal_label }}</h3>
+<p>{{ contact.info.legal_name }}<br>
+{{ contact.info.legal_name_en }}<br>
+Business ID: {{ contact.info.business_id }}<br>
+Registered: {{ contact.info.registered_date }}</p>
+</div>
+</div>
+
 </div>
 </div>
 </div>

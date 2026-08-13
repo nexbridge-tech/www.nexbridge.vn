@@ -581,3 +581,8 @@ collections:
               - { label: "Email", name: "email", widget: "string" }
               - { label: "LinkedIn Label", name: "linkedin_label", widget: "string" }
               - { label: "LinkedIn URL", name: "linkedin_url", widget: "string" }
+              - { label: "Legal Section Label", name: "legal_label", widget: "string" }
+              - { label: "Legal Name (Vietnamese)", name: "legal_name", widget: "string" }
+              - { label: "Legal Name (English)", name: "legal_name_en", widget: "string" }
+              - { label: "Business Registration Number", name: "business_id", widget: "string" }
+              - { label: "Registered Date", name: "registered_date", widget: "string" }

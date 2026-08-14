@@ -31,9 +31,12 @@ module.exports = function (eleventyConfig) {
 
   // Fixed display order for Knowledge topic groups (biggest/most central first)
   const KNOWLEDGE_TOPIC_ORDER = [
-    "Automotive & EV Power Electronics",
-    "Engineering Consulting & Process",
+    "Renewable Energy & Grid Integration",
     "Energy Storage Systems",
+    "Automotive & EV Power Electronics",
+    "PCB Design, Components & EMC",
+    "Robotics & Motion Control",
+    "Engineering Consulting & Process",
     "Semiconductor & Manufacturing",
     "Industrial Networking & Automation",
     "Career & Culture",

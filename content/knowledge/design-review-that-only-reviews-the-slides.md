@@ -1,18 +1,15 @@
----
+﻿---
 layout: article.njk
 title: "The Design Review That Only Reviews the Slides"
 date: 2026-07-16
 tags: ["Automotive / EV Powertrain", "Energy Storage", "Engineering Journal"]
 topic: "Engineering Consulting & Process"
 excerpt: "A design review that runs entirely off a slide deck is reviewing the presenter's summary of the design, not the design itself. The gap between those two things is exactly where risk hides — and it's usually invisible to everyone in the room."
-image: "/assets/images/knowledge-placeholder-process.svg"
+image: "/assets/images/diagrams/design-review-that-only-reviews-the-slides.svg"
 draft: false
 ---
 
-A design review is supposed to be the point where a design gets tested against perspectives the original designer doesn't have — a different subsystem's constraints, a manufacturing engineer's producibility concerns, a safety engineer's failure-mode thinking. In practice, most design reviews run entirely off a slide deck prepared by the same engineer who did the design, summarizing the decisions they already made and, almost by definition, presenting the strongest case for those decisions. That's not a criticism of the engineer — it's simply what happens when the review artifact is a summary written by the person being reviewed, rather than the underlying design data itself.
-
-
-![The slide vs. the actual design — where review risk hides](/assets/images/diagrams/design-review-that-only-reviews-the-slides.svg)
+A design review is supposed to be the point where a design gets tested against perspectives the original designer doesn't have — a different subsystem's constraints, a manufacturing engineer's producibility concerns, a safety engineer's failure-mode thinking. In practice, most design reviews run entirely off a slide deck prepared by the same engineer who did the design, summarizing the decisions they already made and, almost by definition, presenting the strongest case for those decisions. That's not a criticism of the engineer — it's simply what happens when the review artifact is a summary written by the person being reviewed, rather than the underlying design-the-slides.svg)
 
 ## What gets lost in the summary
 

@@ -2,6 +2,22 @@
 layout: solution-detail.njk
 title: "Energy Storage Systems (ESS)"
 eyebrow: "ENERGY STORAGE"
+summary: "Close the control, safety and grid-integration gaps that appear between qualified cells, BMS, PCS, EMS and the real site."
+pain_points:
+  - "The project meets installed MW/MWh but misses dispatch, availability or curtailment targets."
+  - "BMS, PCS and EMS limits conflict during charge, fault recovery or grid events."
+  - "Thermal alarms, cell imbalance or insulation faults repeat without a defensible root cause."
+  - "Commissioning exposes grid-code, communications or protection behavior not covered by FAT."
+interventions:
+  - title: "Architecture & interface review"
+    description: "Map limits, state ownership, timing and fault behavior across cell, rack, PCS, EMS, SCADA and protection."
+  - title: "Safety & thermal review"
+    description: "Challenge detection, isolation, propagation, HVAC and emergency-response assumptions against credible failure sequences."
+  - title: "Grid & control validation"
+    description: "Define weak-grid cases, ride-through, current priority, SOC headroom and hardware-in-the-loop evidence."
+  - title: "Commissioning support"
+    description: "Instrument end-to-end events and close issues with synchronized evidence rather than subsystem blame."
+deliverables: ["System boundary and interface-control matrix", "Protection cause-and-effect and timing review", "Grid/dispatch validation plan with acceptance criteria", "Commissioning issue register and evidence-backed closure"]
 ---
 
 A grid-scale or behind-the-meter battery energy storage system is rarely at risk at the component level — cells, modules and inverters are, for the most part, mature and well-characterized technology. Where programs actually run into trouble is at the seams between those components, and in the gap between a dispatch requirement written by a developer and the grid-code behavior an interconnection authority will actually accept. Our engineering support is built around those seams, not just the components on either side of them.

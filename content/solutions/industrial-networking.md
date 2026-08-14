@@ -2,6 +2,18 @@
 layout: solution-detail.njk
 title: "Industrial Networking"
 eyebrow: "INDUSTRIAL NETWORKING"
+summary: "Engineer deterministic traffic, resilient topology and forensic observability for networks that participate directly in control and uptime."
+pain_points: ["The network has bandwidth but control deadlines are still missed.", "A switch or uplink failure causes recovery behavior nobody tested.", "SCADA, PLC and historian timestamps cannot reconstruct one event.", "Remote sites behave differently under latency, packet loss or stale data."]
+interventions:
+  - title: "Traffic & deadline analysis"
+    description: "Classify flows by latency, jitter, loss tolerance and consequence—not by application name."
+  - title: "Topology & failure review"
+    description: "Expose shared dependencies and verify convergence, redundancy and degraded modes."
+  - title: "Time & observability architecture"
+    description: "Align clocks, event capture, retention and diagnostic context across layers."
+  - title: "Load & fault validation"
+    description: "Test real traffic mix with congestion, path loss, device replacement and partial availability."
+deliverables: ["Traffic-class and latency budget", "Topology/FMEA and recovery sequence", "Time-synchronization and logging design", "Network validation and fault-injection plan"]
 ---
 
 An industrial network doesn't get to fail gracefully the way an office network can. A dropped packet on a corporate Wi-Fi network is an inconvenience; a dropped packet on a network carrying a BESS dispatch command or a safety-rated PLC signal is a control-loop failure. Industrial networking has to be engineered against that reality from the start — for uptime and deterministic real-time behavior, not just throughput.

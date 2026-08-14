@@ -1,18 +1,15 @@
----
+﻿---
 layout: article.njk
 title: "FMEA Theater: When Risk Assessment Becomes a Compliance Exercise Instead of an Engineering One"
 date: 2026-07-13
 tags: ["Automotive / EV Powertrain", "Energy Storage", "Engineering Journal"]
 topic: "Engineering Consulting & Process"
 excerpt: "A Failure Mode and Effects Analysis with a hundred rows and a green severity-times-occurrence heatmap can still miss the failure that actually happens, because the spreadsheet was built to satisfy a milestone gate, not to genuinely interrogate the design."
-image: "/assets/images/knowledge-placeholder-process.svg"
+image: "/assets/images/diagrams/fmea-theater-risk-assessment-compliance-exercise.svg"
 draft: false
 ---
 
-Every serious power electronics or energy storage program produces an FMEA — a systematic walk through failure modes, their effects, their severity, occurrence, and detection ratings, and the resulting risk priority number. It's a genuinely good tool, developed for good reasons, and it's also one of the most consistently hollowed-out documents on a program, because the incentive structure around it rewards completing the spreadsheet, not interrogating the design.
-
-
-![Severity vs. occurrence risk matrix — the cell the FMEA scored green](/assets/images/diagrams/fmea-theater-risk-assessment-compliance-exercise.svg)
+Every serious power electronics or energy storage program produces an FMEA — a systematic walk through failure modes, their effects, their severity, occurrence, and detection ratings, and the resulting risk priority number. It's a genuinely good tool, developed for good reasons, and it's also one of the most consistently hollowed-out documents on a program, because the incentive structure around it rewards completing the spreadsheet, not interrmpliance-exercise.svg)
 
 ## How an FMEA becomes theater without anyone deciding it should
 

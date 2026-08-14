@@ -2,6 +2,22 @@
 layout: solution-detail.njk
 title: "Thermal Management"
 eyebrow: "THERMAL MANAGEMENT"
+summary: "Recover real thermal margin from junction to facility by connecting losses, interfaces, coolant or airflow and production variation."
+pain_points:
+  - "Prototype temperatures pass while production units show a wide hotspot distribution."
+  - "Power derating appears only after hot soak, fouling, aging or back-to-back duty cycles."
+  - "Changing TIM or increasing airflow moves the hotspot but does not recover system margin."
+  - "Pump, fan or cold-plate specifications exist without a correlated thermal model."
+interventions:
+  - title: "Loss-to-temperature correlation"
+    description: "Connect electrical loss maps to junction estimates, sensors and measured boundary conditions."
+  - title: "Interface & tolerance analysis"
+    description: "Quantify bond-line, flatness, pressure, contact resistance and production distributions."
+  - title: "Cooling architecture review"
+    description: "Assess flow balance, pressure drop, air recirculation, transient capacity and degraded operation."
+  - title: "Thermal validation"
+    description: "Build corner cases and instrumentation that prove margin across duty cycle, ambient and aging."
+deliverables: ["Thermal resistance and loss budget", "Hotspot/root-cause correlation", "Cooling architecture and component recommendations", "Production-representative thermal validation plan"]
 ---
 
 Thermal problems in power electronics rarely originate at the scale they're discovered at. A field failure that shows up as a facility-level heat problem often traces back to a component-level thermal interface decision made years earlier; a component that overheats on a production line often traces back to an enclosure-level airflow assumption nobody validated at the system level. Treating thermal management as one discipline across every scale — component, pack, enclosure, facility — is what catches these before they compound.

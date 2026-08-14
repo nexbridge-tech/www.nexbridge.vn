@@ -23,49 +23,21 @@ eleventyComputed:
 </div>
 </section>
 
-<section id="why" class="why section fade-up">
+<section class="solution-diagnostic section fade-up">
 <div class="container">
 <div class="section-title center">
-<span>{{ solutions.why.eyebrow }}</span>
-<h2>{{ solutions.why.title_line1 }}<br>{{ solutions.why.title_line2 }}</h2>
-<p>{{ solutions.why.subtitle }}</p>
+<span>START WITH THE SYMPTOM</span>
+<h2>Where Is Your Program Losing Margin?</h2>
+<p>Most expensive failures begin as a small mismatch between requirement, interface and operating reality. Choose the signal that looks familiar.</p>
 </div>
-<div class="why-grid">
-{% for card in solutions.why.cards %}
-<details class="why-card">
-<summary>
-<div class="why-number">{{ card.number }}</div>
-<h3>{{ card.title }}</h3>
-<p>{{ card.description }}</p>
-</summary>
-<div class="card-detail">
-<p>{{ card.detail }}</p>
-</div>
-</details>
-{% endfor %}
-</div>
-</div>
-</section>
-
-<section class="journey-process section fade-up">
-<div class="container">
-<div class="section-title center">
-<span>{{ solutions.journey_process.eyebrow }}</span>
-<h2>{{ solutions.journey_process.title }}</h2>
-</div>
-<div class="journey-line">
-{% for step in solutions.journey_process.steps %}
-<details class="journey-step">
-<summary>
-<h3>{{ step.number }}</h3>
-<h4>{{ step.title }}</h4>
-<p>{{ step.description }}</p>
-</summary>
-<div class="card-detail">
-<p>{{ step.detail }}</p>
-</div>
-</details>
-{% endfor %}
+<div class="diagnostic-grid">
+<a href="/solutions/energy-storage-systems.html" class="diagnostic-card"><span>ENERGY & GRID</span><h3>The plant meets nameplate, but still curtails, trips or misses dispatch.</h3><p>Look at grid strength, PCS limits, EMS/BMS ownership, protection timing and site commissioning evidence.</p><b>Diagnose BESS & grid integration →</b></a>
+<a href="/solutions/thermal-management.html" class="diagnostic-card"><span>THERMAL</span><h3>The prototype passes, but production units run hot or derate early.</h3><p>Look at loss distribution, interface pressure, tolerance stack-up, coolant balance, airflow and aging.</p><b>Recover thermal margin →</b></a>
+<a href="/solutions/semiconductor.html" class="diagnostic-card"><span>HARDWARE & EMC</span><h3>The board works on the bench, then fails EMC, reliability or production ramp.</h3><p>Look at component derating, switching loops, return paths, parasitics, DFM and supplier variation.</p><b>Review components & PCBA →</b></a>
+<a href="/solutions/automation.html" class="diagnostic-card"><span>CONTROL & INTEGRATION</span><h3>Subsystems pass alone, but the integrated machine or vehicle behaves unpredictably.</h3><p>Look at timing, state ownership, degraded modes, interface contracts and end-to-end validation.</p><b>Close integration gaps →</b></a>
+<a href="/solutions/robotics-motion-control.html" class="diagnostic-card"><span>ROBOTICS & MOTION</span><h3>The robot moves in the lab, but payload, heat, falls and real duty cycles expose the joints.</h3><p>Look at actuator sizing, servo bandwidth, EtherCAT timing, battery transients, EMC, safety and reliability growth.</p><b>Engineer robot reliability →</b></a>
+<a href="/solutions/industrial-networking.html" class="diagnostic-card"><span>DATA & NETWORK</span><h3>Intermittent faults disappear before logs explain what happened.</h3><p>Look at clock alignment, traffic deadlines, observability, stale data and recovery behavior.</p><b>Build diagnosable connectivity →</b></a>
+<a href="/solutions/engineering-consulting.html" class="diagnostic-card"><span>PROGRAM RISK</span><h3>Reviews are happening, but critical assumptions remain ownerless.</h3><p>Look at requirements quality, FMEA evidence, decision records, supplier boundaries and release criteria.</p><b>Structure the engineering decision →</b></a>
 </div>
 </div>
 </section>
@@ -97,161 +69,44 @@ eleventyComputed:
 </div>
 </section>
 
-<section id="energy-storage" class="section fade-up">
+<section class="solution-deliverables section fade-up">
 <div class="container">
 <div class="section-title center">
-<span>{{ solutions.energy_storage.eyebrow }}</span>
-<h2>{{ solutions.energy_storage.title }}</h2>
-<p>{{ solutions.energy_storage.subtitle }}</p>
+<span>WHAT THE ENGAGEMENT PRODUCES</span>
+<h2>Engineering Evidence, Not Another Presentation</h2>
+<p>Every engagement is scoped around a decision your team must make and the evidence required to make it safely.</p>
 </div>
-<div class="blog-grid">
-{% for item in solutions.energy_storage.items %}
-<div class="card">
-<img class="card-photo" loading="lazy" src="{{ item.image }}" alt="{{ item.title }}">
-<h3>{{ item.title }}</h3>
-<p>{{ item.description }}</p>
-</div>
-{% endfor %}
+<div class="deliverable-grid">
+<div class="deliverable-card"><b>01</b><h3>Problem & Boundary Definition</h3><p>Operating envelope, failure signature, interface ownership, assumptions and measurable acceptance criteria.</p><span>Output: engineering brief + evidence plan</span></div>
+<div class="deliverable-card"><b>02</b><h3>Architecture & Design Review</h3><p>Cross-domain review of power, thermal, control, communications, safety, component and manufacturing risks.</p><span>Output: findings ranked by mechanism and impact</span></div>
+<div class="deliverable-card"><b>03</b><h3>Technology & Supplier Decision</h3><p>Application-specific comparison covering margin, qualification, integration effort, supply continuity and lifecycle.</p><span>Output: decision matrix + qualification gaps</span></div>
+<div class="deliverable-card"><b>04</b><h3>Validation & Root-Cause Plan</h3><p>Instrumentation, corner cases, fault injection, decision rules and traceability from requirement to evidence.</p><span>Output: executable DVP / investigation plan</span></div>
+<div class="deliverable-card"><b>05</b><h3>Integration & Commissioning Support</h3><p>End-to-end state, timing and protection verification under nominal, transient and degraded conditions.</p><span>Output: issue closure + commissioning evidence</span></div>
+<div class="deliverable-card"><b>06</b><h3>Production & Field Feedback Loop</h3><p>Supplier/process controls, traceability, telemetry and field-return learning fed back into the design baseline.</p><span>Output: control plan + corrective-action loop</span></div>
 </div>
 </div>
 </section>
 
-<section id="design-services" class="section">
+<section class="engagement-path section fade-up">
 <div class="container">
 <div class="section-title center">
-<span>{{ solutions.design_services.eyebrow }}</span>
-<h2>{{ solutions.design_services.title }}</h2>
-<p>{{ solutions.design_services.subtitle }}</p>
+<span>HOW TO ENGAGE</span>
+<h2>Start At The Point Of Highest Risk</h2>
+<p>You do not need a fully written scope. Bring the symptom, requirement, failed test or decision that is blocking the program.</p>
 </div>
-<div class="blog-grid">
-{% for card in solutions.design_services.cards %}
-<div class="card">
-<img class="card-photo" loading="lazy" src="{{ card.image }}" alt="{{ card.title }}">
-<h3>{{ card.title }}</h3>
-<p>{{ card.description }}</p>
-</div>
-{% endfor %}
-</div>
-</div>
-</section>
-
-<section id="capabilities" class="capabilities section fade-up">
-<div class="container">
-<div class="section-title center">
-<span>{{ solutions.capabilities.eyebrow }}</span>
-<h2>{{ solutions.capabilities.title }}</h2>
-</div>
-<div class="capability-grid">
-{% for item in solutions.capabilities.items %}
-<div class="capability">
-<h3>{{ item.title }}</h3>
-<p>{{ item.description }}</p>
-</div>
-{% endfor %}
-</div>
-</div>
-</section>
-
-<section class="process section fade-up">
-<div class="container">
-<div class="section-title">
-<span>{{ solutions.process.eyebrow }}</span>
-<h2>{{ solutions.process.title }}</h2>
-<p>{{ solutions.process.subtitle }}</p>
-</div>
-<div class="timeline">
-{% for step in solutions.process.steps %}
-<div class="step">
-<div class="circle">{{ step.number }}</div>
-<div>
-<h3>{{ step.title }}</h3>
-<p>{{ step.description }}</p>
-</div>
-</div>
-{% endfor %}
-</div>
-</div>
-</section>
-
-<section class="challenge section fade-up">
-<div class="container">
-<div class="section-title">
-<span>{{ solutions.challenge.eyebrow }}</span>
-<h2>{{ solutions.challenge.title }}</h2>
-</div>
-<div class="challenge-grid">
-{% for card in solutions.challenge.cards %}
-<div class="challenge-card">
-<h3>{{ card.title }}</h3>
-<p>{{ card.description }}</p>
-</div>
-{% endfor %}
-</div>
-</div>
-</section>
-
-<section class="case-study section fade-up">
-<div class="container">
-<div class="section-title center">
-<span>{{ solutions.case_study.eyebrow }}</span>
-<h2>{{ solutions.case_study.title }}</h2>
-<p>{{ solutions.case_study.subtitle }}</p>
-</div>
-<div class="case-grid">
-{% for card in solutions.case_study.cards %}
-<article class="case-card">
-<img class="card-photo" loading="lazy" src="{{ card.image }}" alt="{{ card.title }}">
-<div class="case-tag">{{ card.tag }}</div>
-<h3>{{ card.title }}</h3>
-<p>{{ card.description }}</p>
-<a href="{{ card.link }}">{{ card.link_text }}</a>
-</article>
-{% endfor %}
-</div>
-</div>
-</section>
-
-<section class="technology section fade-up">
-<div class="container">
-<div class="section-title center">
-<span>{{ solutions.technology.eyebrow }}</span>
-<h2>{{ solutions.technology.title }}</h2>
-<p>{{ solutions.technology.subtitle }}</p>
-</div>
-<div class="tech-grid">
-{% for card in solutions.technology.cards %}
-<article class="tech-card">
-<div class="tech-icon">{{ card.icon }}</div>
-<h3>{{ card.title }}</h3>
-<p>{{ card.description }}</p>
-</article>
-{% endfor %}
-</div>
-</div>
-</section>
-
-<section class="engineers section fade-up">
-<div class="container">
-<div class="section-title center">
-<span>{{ solutions.engineers.eyebrow }}</span>
-<h2>{{ solutions.engineers.title }}</h2>
-<p>{{ solutions.engineers.subtitle }}</p>
-</div>
-<div class="engineer-grid">
-{% for card in solutions.engineers.cards %}
-<div class="engineer-card">
-<h3>{{ card.title }}</h3>
-<p>{{ card.description }}</p>
-</div>
-{% endfor %}
+<div class="engagement-steps">
+<div><strong>01</strong><h3>Frame</h3><p>We identify the physical or process boundary and the decision that needs evidence.</p></div>
+<div><strong>02</strong><h3>Interrogate</h3><p>We review data, design artifacts and assumptions across the interfaces where risk concentrates.</p></div>
+<div><strong>03</strong><h3>Resolve</h3><p>We provide prioritized actions, owners, validation criteria and supplier or implementation support.</p></div>
+<div><strong>04</strong><h3>Close</h3><p>We stay through verification so findings become released design or operating controls.</p></div>
 </div>
 </div>
 </section>
 
 <section class="cta">
 <div class="container" style="text-align:center">
-<h2>{{ solutions.cta.title }}</h2>
-<p>{{ solutions.cta.text }}</p>
-<a href="{{ solutions.cta.button_link }}" class="btn btn-light">{{ solutions.cta.button_text }}</a>
+<h2>Bring Us The Failure Signature, Not A Polished Brief.</h2>
+<p>Share the requirement, test result, field symptom or architecture boundary your team cannot close with confidence.</p>
+<a href="/contact.html" class="btn btn-light">Talk To An Engineer</a>
 </div>
 </section>

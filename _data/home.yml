@@ -4,35 +4,33 @@ seo_description: NexBridge connects global technology partners with OEMs through
   solutions.
 hero:
   cta_primary_link: contact.html
-  cta_secondary_text: Explore Solutions
+  cta_secondary_text: Find Your Engineering Path
   eyebrow: Vietnam ⇆ Global Technology Network
   headline_before: Connecting
-  headline_after: with Industrial Excellence
-  cta_secondary_link: solutions.html
-  headline_accent: Global Technology
+  headline_after: Into Reliable Systems
+  cta_secondary_link: "#engineering-paths"
+  headline_accent: Energy, Robotics & Technology
   strip:
     - icon: compass
       label: Step 1 — Understand Your Challenge
-      link: solutions.html#why
+      link: /solutions.html
     - icon: layers
       label: Step 2 — Technology & Component Matching
-      link: solutions.html#solution-area
+      link: /solutions.html#solution-area
     - icon: chip
       label: Step 3 — PCBA Design Support
-      link: solutions.html#design-services
+      link: /solutions/semiconductor.html
     - icon: eye
       label: Step 4 — Design Review
-      link: solutions.html#design-services
+      link: /solutions/engineering-consulting.html
     - icon: robot
       label: Step 5 — Prototype & Validation
-      link: solutions.html#design-services
+      link: /knowledge.html
     - icon: handshake
       label: Step 6 — Production & Long-Term Support
-      link: solutions.html#capabilities
+      link: /contact.html
   cta_primary_text: Talk To An Engineer
-  lead: NexBridge connects OEMs with trusted global technology partners, providing
-    engineering expertise, advanced technologies, and manufacturing capabilities
-    to transform innovative ideas into reliable products.
+  lead: Connecting robotics, energy, electronics, controls and global technology into systems that survive integration, production and the field.
 design_services:
   eyebrow: ENGINEERING SUPPORT
   title: Beyond Sourcing — Real Design Support
@@ -63,7 +61,7 @@ explore:
       description: Energy storage systems, thermal management, AI infrastructure,
         automation, networking and semiconductor sourcing.
       link_text: View Solutions →
-      link: solutions.html
+      link: /solutions/thermal-management.html
     - icon: factory
       title: Industries
       description: "Where we work: automotive, electronics manufacturing, industrial
@@ -109,31 +107,31 @@ challenge_finder:
   chips:
     - emoji: 🔥
       label: Reduce Heat
-      link: solutions.html
+      link: /knowledge/renewable-plant-grid-integration-curtailment-trips.html
     - emoji: ⚡
       label: Save Energy
       link: solutions.html
     - emoji: 🔋
       label: Energy Storage
-      link: solutions.html#energy-storage
+      link: /solutions/energy-storage-systems.html
     - emoji: 🏭
       label: Factory Automation
-      link: solutions.html
+      link: /solutions/automation.html
     - emoji: 🤖
       label: AI Infrastructure
-      link: solutions.html
+      link: /solutions/ai-infrastructure.html
     - emoji: 📡
       label: Industrial Connectivity
-      link: solutions.html
+      link: /solutions/industrial-networking.html
     - emoji: 🔬
       label: Semiconductor
-      link: solutions.html
+      link: /solutions/semiconductor.html
     - emoji: 🧪
       label: Engineering Materials
-      link: solutions.html
+      link: /knowledge/pcb-layout-emi-emc-return-paths-power-electronics.html
     - emoji: 💡
       label: Need Technical Advice
-      link: solutions.html
+      link: /solutions/engineering-consulting.html
 cta:
   title: Ready To Build Something Great?
   text: Let's discuss your next engineering project.

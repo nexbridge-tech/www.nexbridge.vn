@@ -476,6 +476,11 @@ const groups=Array.from(grid.querySelectorAll(".topic-group"));
 const chips=Array.from(document.querySelectorAll("#topicChips .topic-chip"));
 const searchInput=document.getElementById("knowledgeSearchInput");
 const emptyState=document.getElementById("knowledgeEmptyState");
+document.querySelectorAll("[data-pillar-topic]").forEach(card=>card.addEventListener("click",()=>{
+const topic=card.dataset.pillarTopic;
+const chip=Array.from(chips).find(item=>item.dataset.topic===topic);
+if(chip){chip.click()}
+}));
 
 let activeTopic="all";
 

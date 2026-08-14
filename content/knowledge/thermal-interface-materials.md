@@ -1,18 +1,15 @@
----
+﻿---
 layout: article.njk
 title: "Choosing Thermal Interface Materials for High-Density Electronics"
 date: 2026-07-01
 tags: ["Thermal Management"]
 topic: "Thermal Management"
 excerpt: "Datasheets list thermal conductivity under ideal lab conditions — real mounting pressure, gap tolerance and production temperatures almost never match that. This piece walks through how we actually choose between gap pads, thermal grease and phase-change materials, and where teams typically get it wrong."
-image: "/assets/images/knowledge-thermal-heatsink.jpg"
+image: "/assets/images/diagrams/thermal-interface-materials.svg"
 draft: false
 ---
 
-Datasheets list thermal conductivity under ideal lab conditions: a fixed test pressure, a controlled bond-line thickness, a flat and rigid test fixture. Real assemblies apply uneven mounting pressure across a component with its own flatness tolerance, land on a heatsink with its own machining tolerance, and run at production ambient temperatures the lab test never simulated. The gap between that number and what a thermal interface material (TIM) actually delivers in an assembled unit is where a surprising number of "the design should have enough thermal margin" assumptions quietly fail.
-
-
-![Heatsink, thermal interface material and component — where bond-line thickness is decided](/assets/images/diagrams/thermal-interface-materials.svg)
+Datasheets list thermal conductivity under ideal lab conditions: a fixed test pressure, a controlled bond-line thickness, a flat and rigid test fixture. Real assemblies apply uneven mounting pressure across a component with its own flatness tolerance, land on a heatsink with its own machining tolerance, and run at production ambient temperatures the lab test never simulated. The gap between that number and what a thermal interface material (TIM) actually delivers in an assembled unit is where a surprising number of "the design should have enough thermal margin" assumptions quietlrials.svg)
 
 ## How mounting pressure changes effective thermal resistance
 

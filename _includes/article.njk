@@ -5,8 +5,9 @@ permalink: "knowledge/{{ page.fileSlug }}.html"
 <section class="page-header">
 <div class="hero-glow"></div>
 <div class="container">
-<span class="hero-eyebrow">{% if tags %}{{ tags | join(" · ") }}{% endif %}</span>
+<span class="hero-eyebrow">{% if series %}{{ series }}{% elif tags %}{{ tags | join(" · ") }}{% endif %}</span>
 <h1>{{ title }}</h1>
+{% if excerpt %}<p class="article-deck">{{ excerpt }}</p>{% endif %}
 </div>
 </section>
 
@@ -17,10 +18,39 @@ permalink: "knowledge/{{ page.fileSlug }}.html"
 <img class="card-photo" style="aspect-ratio:16/9" src="{{ image }}" alt="{{ title }}">
 {% endif %}
 
-<div class="blog-meta" style="margin-bottom:24px">{{ date | readableDate }}</div>
+<div class="article-meta-row"><span>{{ date | readableDate }}</span><span>{{ topic or "Engineering field note" }}</span>{% if series %}<span>{{ series }}</span>{% endif %}</div>
 
 <div class="article-body">
 {{ content | safe }}
+
+<aside class="engineering-lens">
+<span class="engineering-lens__eyebrow">ENGINEERING REVIEW LENS</span>
+<h2>Questions to close before design freeze</h2>
+{% if topic == "Energy Storage Systems" %}
+<ul><li>Which limits are enforced locally by the BMS, and which depend on an upstream EMS or operator?</li><li>Have fault responses been tested with delayed, missing and contradictory sensor data?</li><li>Does commissioning reproduce the real grid, thermal and communications boundary conditions?</li><li>Can event logs reconstruct command, state, protection and timing across every subsystem?</li></ul>
+{% elif topic == "AI Infrastructure" %}
+<ul><li>Was the power and cooling chain validated against workload transients, not only average load?</li><li>Where does stored energy or thermal mass absorb a synchronized rack-level step?</li><li>Are telemetry sampling rates fast enough to reveal the event the protection system sees?</li><li>What happens when one facility dependency degrades without failing completely?</li></ul>
+{% elif topic == "Industrial Networking & Automation" %}
+<ul><li>Which traffic classes have hard deadlines, and are those deadlines measured end to end?</li><li>What is the defined behavior during packet loss, clock drift or partial controller availability?</li><li>Can the team trace one production event across PLC, gateway, historian and application time bases?</li><li>Has recovery after a switch, device or uplink replacement been tested on the live topology?</li></ul>
+{% elif topic == "Semiconductor & Manufacturing" %}
+<ul><li>Which incoming and in-process measurements predict field reliability rather than cosmetic quality?</li><li>Are qualification samples representative of production tooling and operator variation?</li><li>Can every critical material, process revision and test result be traced to the finished unit?</li><li>What drift signal triggers containment before failures escape the factory?</li></ul>
+{% elif topic == "Thermal Management" %}
+<ul><li>Were results correlated to actual interface pressure, airflow and production tolerances?</li><li>Which hotspot moves first when ambient, fouling or load distribution changes?</li><li>Are sensors placed to protect the limiting component rather than the easiest point to measure?</li><li>Does validation include aging, pump or fan degradation and service conditions?</li></ul>
+{% else %}
+<ul><li>What evidence would disprove the key design assumption?</li><li>Which interface owner is accountable for timing, limits, states and failure behavior?</li><li>Does validation cover tolerance extremes and degraded operation, not only the nominal path?</li><li>Can a field event be reconstructed from retained measurements and configuration history?</li></ul>
+{% endif %}
+</aside>
+
+<section class="validation-path">
+<span class="engineering-lens__eyebrow">FROM FAILURE MODE TO EVIDENCE</span>
+<div class="validation-path__grid">
+<div><b>01</b><h3>Define the boundary</h3><p>Name the operating state, interfaces, tolerances and degraded conditions. A test without a boundary only proves the sample survived once.</p></div>
+<div><b>02</b><h3>Capture the right signal</h3><p>Choose measurements fast and close enough to the mechanism to explain cause, sequence and margin—not just the final alarm.</p></div>
+<div><b>03</b><h3>Set a decision rule</h3><p>Agree before the test what passes, what triggers redesign and what uncertainty requires another experiment.</p></div>
+</div>
+</section>
+
+<div class="article-cta"><div><span>NEED A SECOND ENGINEERING VIEW?</span><h2>Turn the lesson into a validation plan.</h2><p>Bring us the requirement, failure signature or architecture boundary. We will help frame the evidence needed to make the next decision.</p></div><a href="/contact.html" class="btn btn-primary">Discuss Your Challenge</a></div>
 </div>
 
 <div style="margin-top:48px">

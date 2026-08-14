@@ -2,6 +2,18 @@
 layout: solution-detail.njk
 title: "Automation"
 eyebrow: "AUTOMATION"
+summary: "Make the whole line behave as one system by engineering state, timing, handoffs, diagnostics and data before production pressure exposes the seams."
+pain_points: ["Cells pass standalone SAT but lose cycle time when integrated.", "Intermittent stops are cleared by reset before logs reveal the sequence.", "PLC, robot, vision and MES teams use different definitions of ready or complete.", "A late IIoT request destabilizes control traffic or forces risky PLC changes."]
+interventions:
+  - title: "Sequence & state review"
+    description: "Define ownership, handshake timing, timeout, retry and safe recovery across every cell boundary."
+  - title: "Cycle-time engineering"
+    description: "Measure the critical path and variability rather than summing nominal equipment times."
+  - title: "Fault & recovery design"
+    description: "Create diagnosable faults, retained context and recovery paths that avoid unsafe manual workarounds."
+  - title: "Data-layer integration"
+    description: "Separate deterministic control from telemetry and align tags, clocks and event semantics."
+deliverables: ["Line state and interface specification", "Measured cycle-time loss tree", "Fault taxonomy and recovery matrix", "PLC/SCADA/MES data architecture"]
 ---
 
 Automation projects rarely fail because a PLC or a robot arm was the wrong equipment choice. They fail in the space between individually-tested automation cells and the integrated line those cells are supposed to become — a gap that's invisible in any single cell's commissioning test and only shows up once the whole system runs together.

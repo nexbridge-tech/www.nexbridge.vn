@@ -1,18 +1,15 @@
----
+﻿---
 layout: article.njk
 title: "Tolerance Stack-Up: The Silent Killer of 'It Worked on the Bench'"
 date: 2026-06-25
 tags: ["Automotive / EV Powertrain", "Manufacturing", "Technical Guides"]
 topic: "Automotive & EV Power Electronics"
 excerpt: "A bench prototype is built from parts near the center of their tolerance bands, by engineers who unconsciously select the best-fitting components. Production doesn't have that luxury — and that's exactly where designs that worked perfectly start failing."
-image: "/assets/images/knowledge-placeholder-power-electronics.svg"
+image: "/assets/images/diagrams/tolerance-stack-up-silent-killer.svg"
 draft: false
 ---
 
-There's a specific and very common failure pattern: a design works flawlessly through every bench validation, passes design review, and then starts showing marginal failures once production volume ramps — not catastrophic failures, just an uncomfortable percentage of units sitting right at the edge of a spec limit. The design didn't change. What changed is which end of each component's tolerance band the actual production units are drawn from, and how those individual tolerances stack up once enough of them align in the same direction.
-
-
-![Every component in spec — the assembly stack-up isn't](/assets/images/diagrams/tolerance-stack-up-silent-killer.svg)
+There's a specific and very common failure pattern: a design works flawlessly through every bench validation, passes design review, and then starts showing marginal failures once production volume ramps — not catastrophic failures, just an uncomfortable percentage of units sitting right at the edge of a spec limit. The design didn't change. What changed is which end of each component's tolerance band the actual production units are drawn from, and how those individual tolerances stack up once enough of them align in the same direction.vg)
 
 ## Why bench builds are unintentionally optimistic
 

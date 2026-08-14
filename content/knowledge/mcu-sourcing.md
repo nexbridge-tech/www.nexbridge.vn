@@ -1,20 +1,17 @@
----
+﻿---
 layout: article.njk
 title: "Sourcing the Right MCU: Lessons From The Production Line"
 date: 2026-07-01
 tags: ["Semiconductor"]
 topic: "Semiconductor & Manufacturing"
 excerpt: "A microcontroller that clears every check on paper can still fail once it hits automotive-grade temperature cycling, or an allocation shortage forces a second-source swap. Here's what we actually check beyond the datasheet before recommending an MCU for production."
-image: "/assets/images/knowledge-mcu-chip.jpg"
+image: "/assets/images/diagrams/mcu-sourcing.svg"
 draft: false
 ---
 
 A microcontroller that clears every line item on the datasheet — right core, right peripherals, right price — can still be the wrong part for production. The failure modes that actually show up later almost never come from a spec the datasheet got wrong. They come from questions the datasheet was never going to answer in the first place: what happens after ten thousand thermal cycles, what happens when the fab allocates your die revision to a bigger customer, and what "automotive-grade" is actually certifying versus what a buyer assumes it's certifying.
 
-
-![What clears the MCU datasheet vs. what a real qualification check verifies](/assets/images/diagrams/mcu-sourcing.svg)
-
-## Temperature cycling and long-term reliability, not just the spec sheet
+![What clears re cycling and long-term reliability, not just the spec sheet
 
 An MCU's operating temperature range on the datasheet describes where it functions, not where it survives for the life of the product. Solder joint fatigue, wire-bond degradation and package-level stress accumulate with every thermal cycle, and the cycle count that matters is the one the end application actually sees — a chassis-mounted controller near a power stage sees a very different thermal history than a bench sample sees in a lab running a handful of functional tests. Two MCUs with identical operating-range numbers can have meaningfully different cycles-to-failure distributions once you look at the underlying package qualification data (AEC-Q100 grade and the specific stress test results behind it), and that data is rarely in the top-line datasheet — it's in the qualification report, and it's worth asking for before committing a design to a part.
 

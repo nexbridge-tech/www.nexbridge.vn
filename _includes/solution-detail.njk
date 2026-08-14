@@ -7,6 +7,7 @@ permalink: "solutions/{{ page.fileSlug }}.html"
 <div class="container">
 <span class="hero-eyebrow">Solutions · {{ eyebrow }}</span>
 <h1>{{ title }}</h1>
+{% if summary %}<p class="article-deck">{{ summary }}</p>{% endif %}
 </div>
 </section>
 
@@ -20,6 +21,30 @@ permalink: "solutions/{{ page.fileSlug }}.html"
 <div class="article-body">
 {{ content | safe }}
 </div>
+
+{% if pain_points %}
+<section class="solution-brief-block">
+<span class="solution-brief-label">WHEN TO BRING US IN</span>
+<h2>Signals that the problem is bigger than one component</h2>
+<div class="signal-list">{% for item in pain_points %}<div><b>{{ loop.index | string }}</b><p>{{ item }}</p></div>{% endfor %}</div>
+</section>
+{% endif %}
+
+{% if interventions %}
+<section class="solution-brief-block solution-brief-dark">
+<span class="solution-brief-label">HOW WE INTERVENE</span>
+<h2>Work scoped around the engineering decision</h2>
+<div class="intervention-grid">{% for item in interventions %}<div><h3>{{ item.title }}</h3><p>{{ item.description }}</p></div>{% endfor %}</div>
+</section>
+{% endif %}
+
+{% if deliverables %}
+<section class="solution-brief-block">
+<span class="solution-brief-label">WHAT YOUR TEAM RECEIVES</span>
+<h2>Evidence that can survive a design gate</h2>
+<ul class="deliverable-list">{% for item in deliverables %}<li>{{ item }}</li>{% endfor %}</ul>
+</section>
+{% endif %}
 
 <div style="margin-top:48px;display:flex;gap:16px;flex-wrap:wrap">
 <a href="/solutions.html" class="btn btn-outline">&larr; Back To Solutions</a>

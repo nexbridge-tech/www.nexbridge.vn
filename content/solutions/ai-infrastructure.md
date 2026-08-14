@@ -2,6 +2,18 @@
 layout: solution-detail.njk
 title: "AI Infrastructure"
 eyebrow: "AI INFRASTRUCTURE"
+summary: "Treat high-density AI racks as transient power and thermal systems, sized against synchronized workloads and facility boundary conditions."
+pain_points: ["Rack nameplate capacity is available but workload bursts trip or sag the power chain.", "Coolant supply looks adequate while individual manifolds or devices run out of margin.", "Facility telemetry samples too slowly to explain the protection event.", "Power and cooling dependencies fail gracefully alone but cascade together."]
+interventions:
+  - title: "Transient power review"
+    description: "Characterize synchronized load steps and allocate impedance, buffering and protection margin."
+  - title: "Liquid-cooling validation"
+    description: "Review heat maps, flow distribution, pressure drop, control dynamics and leak response."
+  - title: "Rack-to-facility integration"
+    description: "Close dependencies across busway, PDU, rack, CDU, facility water and monitoring."
+  - title: "Instrumentation strategy"
+    description: "Capture electrical and thermal events at sampling rates that preserve cause and sequence."
+deliverables: ["Rack/facility power transient model", "Cooling-loop balance and degraded-mode review", "Protection and dependency map", "Workload-representative validation plan"]
 ---
 
 GPU rack density has pushed AI infrastructure into power distribution and cooling problems that industrial power electronics engineers have been solving for years in other domains — high-current power delivery to a dense, heat-concentrated load, and liquid cooling designed against a real thermal budget instead of a nominal one. It's the same underlying discipline applied to a newer application.

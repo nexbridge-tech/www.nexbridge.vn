@@ -46,35 +46,6 @@ description: "NexBridge bridges Vietnamese manufacturers with global technology 
 
     <div class="hero-glow"></div>
 
-    <div class="hero-network">
-        <svg viewBox="0 0 900 520" preserveAspectRatio="xMaxYMid slice">
-            <g stroke="#00AEEF" stroke-width="1" opacity=".35">
-                <line x1="560" y1="90" x2="700" y2="60"/>
-                <line x1="700" y1="60" x2="830" y2="140"/>
-                <line x1="560" y1="90" x2="640" y2="200"/>
-                <line x1="640" y1="200" x2="800" y2="230"/>
-                <line x1="640" y1="200" x2="560" y2="320"/>
-                <line x1="560" y1="320" x2="700" y2="400"/>
-                <line x1="700" y1="400" x2="850" y2="380"/>
-                <line x1="800" y1="230" x2="850" y2="380"/>
-                <line x1="800" y1="230" x2="830" y2="140"/>
-                <line x1="560" y1="320" x2="480" y2="230"/>
-                <line x1="480" y1="230" x2="560" y2="90"/>
-            </g>
-            <g fill="#00AEEF">
-                <circle class="hero-node" cx="560" cy="90" r="4" style="animation-delay:0s"/>
-                <circle class="hero-node" cx="700" cy="60" r="3" style="animation-delay:.4s"/>
-                <circle class="hero-node" cx="830" cy="140" r="5" style="animation-delay:.8s"/>
-                <circle class="hero-node" cx="640" cy="200" r="4" style="animation-delay:1.2s"/>
-                <circle class="hero-node" cx="800" cy="230" r="3.5" style="animation-delay:1.6s"/>
-                <circle class="hero-node" cx="560" cy="320" r="4.5" style="animation-delay:.6s"/>
-                <circle class="hero-node" cx="700" cy="400" r="3.5" style="animation-delay:1s"/>
-                <circle class="hero-node" cx="850" cy="380" r="4" style="animation-delay:1.8s"/>
-                <circle class="hero-node" cx="480" cy="230" r="3" style="animation-delay:2s"/>
-            </g>
-        </svg>
-    </div>
-
     <div class="container">
         <div class="hero-banner-inner">
             <span class="hero-eyebrow">{{ home.hero.eyebrow }}</span>
@@ -90,75 +61,47 @@ description: "NexBridge bridges Vietnamese manufacturers with global technology 
         </div>
     </div>
 
-    <div class="hero-strip">
-        <div class="container">
-            <div class="hero-strip-grid">
-                {% for item in home.hero.strip %}
-                <a href="{{ item.link }}" class="hero-strip-item">
-                    {{ icons[item.icon] | safe }}
-                    <span>{{ item.label }}</span>
-                </a>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
 </section>
 
-<section class="section">
+<section class="home-pathways section" id="engineering-paths">
 <div class="container">
 
 <div class="section-title center">
-<span>{{ home.design_services.eyebrow }}</span>
-<h2>{{ home.design_services.title }}</h2>
-<p>{{ home.design_services.subtitle }}</p>
+<span>ENGINEERING DECISION PATHS</span>
+<h2>Start Where Your Program Is Losing Confidence</h2>
+<p>Choose the failure domain. Each path connects a solution brief with the deeper engineering analysis behind it.</p>
 </div>
 
-<div class="blog-grid">
-{% for card in home.design_services.cards %}
-<div class="card">
-<img class="card-photo" loading="lazy" src="{{ card.image }}" alt="{{ card.title }}">
-<h3>{{ card.title }}</h3>
-<p>{{ card.description }}</p>
-</div>
-{% endfor %}
+<div class="home-path-grid">
+<article class="home-path-card"><span>01 · ENERGY & GRID</span><h3>Renewable plants and BESS that curtail, trip or miss dispatch</h3><p>Close weak-grid, PCS, EMS/BMS, protection, thermal-safety and commissioning gaps.</p><div><a href="/solutions/energy-storage-systems.html">Solution brief →</a><a href="/knowledge/renewable-plant-grid-integration-curtailment-trips.html">Technical deep dive →</a></div></article>
+<article class="home-path-card"><span>02 · EV POWER ELECTRONICS</span><h3>Motor control, inverter and 6-in-1 behavior that breaks at integration</h3><p>Resolve current-loop, transient, thermal, common-mode, PDU, OBC and DC-DC interactions.</p><div><a href="/solutions/engineering-consulting.html">Solution brief →</a><a href="/knowledge/six-in-one-pdu-obc-dcdc-inverter-integration.html">Technical deep dive →</a></div></article>
+<article class="home-path-card"><span>03 · PCB & EMC</span><h3>Boards that work on the bench but fail EMC, reliability or production</h3><p>Review component margin, switching loops, return paths, isolation, layout and supplier variation.</p><div><a href="/solutions/semiconductor.html">Solution brief →</a><a href="/knowledge/pcb-layout-emi-emc-return-paths-power-electronics.html">Technical deep dive →</a></div></article>
+<article class="home-path-card"><span>04 · THERMAL</span><h3>Systems that overheat, derate early or vary across production</h3><p>Connect real losses to interfaces, airflow, liquid cooling, tolerances and aged conditions.</p><div><a href="/solutions/thermal-management.html">Solution brief →</a><a href="/knowledge/thermal-interface-materials.html">Technical deep dive →</a></div></article>
+<article class="home-path-card"><span>05 · AUTOMATION & NETWORK</span><h3>Subsystems that pass alone but fail as one connected operation</h3><p>Engineer state ownership, timing, recovery, deterministic traffic and forensic observability.</p><div><a href="/solutions/automation.html">Solution brief →</a><a href="/knowledge/real-time-vs-best-effort-deterministic-factory-networks.html">Technical deep dive →</a></div></article>
+<article class="home-path-card"><span>06 · AI INFRASTRUCTURE</span><h3>Rack power and cooling that lose margin under real workloads</h3><p>Validate synchronized transients, bus impedance, coolant distribution and facility dependencies.</p><div><a href="/solutions/ai-infrastructure.html">Solution brief →</a><a href="/knowledge/gpu-rack-power-delivery-transient-load-behavior.html">Technical deep dive →</a></div></article>
+<article class="home-path-card"><span>07 · ROBOTICS & MOTION</span><h3>Humanoid and industrial robots that need to survive beyond the demo</h3><p>Close joint actuator, servo control, real-time network, battery, thermal, EMC, safety and industrialization gaps.</p><div><a href="/solutions/robotics-motion-control.html">Solution brief →</a><a href="/knowledge/humanoid-robot-joint-actuator-servo-validation.html">Technical deep dive →</a></div></article>
 </div>
 
 </div>
 </section>
 
-<section class="section">
+<section class="home-knowledge section">
 <div class="container">
 
 <div class="section-title center">
-<span>{{ home.explore.eyebrow }}</span>
-<h2>{{ home.explore.title }}</h2>
+<span>FROM THE KNOWLEDGE SYSTEM</span>
+<h2>Read The Failure Mechanism Before You Choose The Fix</h2>
+<p>Cornerstone guides designed for engineering reviews, architecture decisions and validation planning.</p>
 </div>
 
-<div class="explore-grid">
-{% for card in home.explore.cards %}
-<a href="{{ card.link }}" class="explore-card">
-<div class="explore-icon">{{ icons[card.icon] | safe }}</div>
-<h3>{{ card.title }}</h3>
-<p>{{ card.description }}</p>
-<span class="explore-link">{{ card.link_text }}</span>
-</a>
-{% endfor %}
+<div class="home-featured-grid">
+<a class="home-featured-card home-featured-card--wide" href="/knowledge/bess-thermal-runaway-detection-protection-coordination.html"><img src="/assets/images/editorial/bess-commissioning.png" alt="BESS commissioning and protection"><div><span>BESS SAFETY & CONTROLS</span><h3>Thermal Runaway: Detection Is Not Protection Until The Whole Chain Works</h3><p>Sensor placement, BMS logic, isolation, ventilation and emergency response as one timed system.</p></div></a>
+<a class="home-featured-card" href="/knowledge/ev-motor-control-current-loop-torque-ripple-instability.html"><img src="/assets/images/editorial/ev-motor-control-validation.png" alt="EV motor control validation"><div><span>EV MOTOR CONTROL</span><h3>Current Loops, Torque Ripple And Calibration Traps</h3></div></a>
+<a class="home-featured-card" href="/knowledge/component-selection-derating-automotive-power-design.html"><img src="/assets/images/editorial/electronics-manufacturing.png" alt="Automotive electronics component selection"><div><span>COMPONENT ENGINEERING</span><h3>Derating, Parasitics And Supply Risk Beyond The Datasheet</h3></div></a>
 </div>
+<div class="home-library-link"><a href="/knowledge.html" class="btn btn-outline">Explore The Full Knowledge Library →</a></div>
 
 </div>
-</section>
-
-<section class="feature-bar">
-    <div class="container">
-        <div class="feature-bar-grid">
-            {% for item in home.feature_bar %}
-            <div class="feature-bar-item">
-                {{ icons[item.icon] | safe }}
-                <span>{{ item.label }}</span>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
 </section>
 
 <section class="challenge-finder section">
@@ -172,7 +115,7 @@ description: "NexBridge bridges Vietnamese manufacturers with global technology 
 
 <div class="finder-grid">
 {% for chip in home.challenge_finder.chips %}
-<a href="{{ chip.link }}">{{ chip.emoji }} {{ chip.label }}</a>
+<a href="{{ chip.link }}">{{ chip.label }} <span>→</span></a>
 {% endfor %}
 </div>
 

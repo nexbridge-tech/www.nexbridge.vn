@@ -1,18 +1,15 @@
----
+﻿---
 layout: article.njk
 title: "Smart Factory Integration: Where Automation Projects Actually Fail"
 date: 2026-07-01
 tags: ["Manufacturing", "Industrial Networking", "Supply Chain"]
 topic: "Industrial Networking & Automation"
 excerpt: "Most automation projects don't fail because the robot or the PLC was wrong — they fail in the gap between the automation plan and what's actually running on the shop floor. Here are the integration gaps we see most often, and how to catch them before commissioning."
-image: "/assets/images/knowledge-automation-arm.jpg"
+image: "/assets/images/diagrams/smart-factory-integration.svg"
 draft: false
 ---
 
-Most automation projects don't fail because the robot or the PLC was wrong. They fail in the gap between the automation plan — the layout drawing, the network architecture diagram, the cycle-time model — and what's actually running on the shop floor once integration starts. That gap is predictable enough that it's worth naming the specific places it opens up, instead of treating each project's integration problems as a one-off surprise.
-
-
-![The automation plan vs. the shop floor it actually meets](/assets/images/diagrams/smart-factory-integration.svg)
+Most automation projects don't fail because the robot or the PLC was wrong. They fail in the gap between the automation plan — the layout drawing, the network architecture diagram, the cycle-time model — and what's actually running on the shop floor once integration starts. That gap is predictable enough that it's worth naming the specific places it opens up, instead of treating each project's integration problems as a one-off surprise.vg)
 
 ## Where the plan usually stops matching the floor
 

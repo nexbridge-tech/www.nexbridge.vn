@@ -1,0 +1,24 @@
+---
+layout: base.njk
+permalink: "login.html"
+title: "Member Login | NexBridge Solutions"
+description: "Sign in to access your NexBridge technical document library."
+memberPage: true
+noindex: true
+---
+<section class="member-shell section">
+<div class="container member-shell-grid">
+<div class="member-intro"><span>MEMBER LIBRARY</span><h1>Continue Your Engineering Work</h1><p>Sign in to access free member resources and documents assigned to your account.</p><a href="/industries.html">Explore the Technical Library &rarr;</a></div>
+<div class="member-card">
+<h2>Sign In</h2><p>Use the email address connected to your NexBridge account.</p>
+<div class="member-config-warning" data-member-config-warning hidden>Member access is not configured yet. Add the Supabase environment variables before testing sign-in.</div>
+<form id="memberLoginForm" class="member-form">
+<label>Email<input type="email" name="email" autocomplete="email" required></label>
+<label>Password<input type="password" name="password" autocomplete="current-password" minlength="8" required></label>
+<button type="submit" class="btn btn-primary">Sign In</button>
+<p class="member-form-status" role="status"></p>
+</form>
+<div class="member-form-footer"><a href="/register.html">Create an account</a><button type="button" id="memberResetPassword">Forgot password?</button></div>
+</div>
+</div>
+</section>

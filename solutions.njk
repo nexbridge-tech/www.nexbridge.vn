@@ -23,25 +23,6 @@ eleventyComputed:
 </div>
 </section>
 
-<section class="solution-diagnostic section fade-up">
-<div class="container">
-<div class="section-title center">
-<span>START WITH THE SYMPTOM</span>
-<h2>Where Is Your Program Losing Margin?</h2>
-<p>Most expensive failures begin as a small mismatch between requirement, interface and operating reality. Choose the signal that looks familiar.</p>
-</div>
-<div class="diagnostic-grid">
-<a href="/solutions/energy-storage-systems.html" class="diagnostic-card"><span>ENERGY & GRID</span><h3>The plant meets nameplate, but still curtails, trips or misses dispatch.</h3><p>Look at grid strength, PCS limits, EMS/BMS ownership, protection timing and site commissioning evidence.</p><b>Diagnose BESS & grid integration →</b></a>
-<a href="/solutions/thermal-management.html" class="diagnostic-card"><span>THERMAL</span><h3>The prototype passes, but production units run hot or derate early.</h3><p>Look at loss distribution, interface pressure, tolerance stack-up, coolant balance, airflow and aging.</p><b>Recover thermal margin →</b></a>
-<a href="/solutions/semiconductor.html" class="diagnostic-card"><span>HARDWARE & EMC</span><h3>The board works on the bench, then fails EMC, reliability or production ramp.</h3><p>Look at component derating, switching loops, return paths, parasitics, DFM and supplier variation.</p><b>Review components & PCBA →</b></a>
-<a href="/solutions/automation.html" class="diagnostic-card"><span>CONTROL & INTEGRATION</span><h3>Subsystems pass alone, but the integrated machine or vehicle behaves unpredictably.</h3><p>Look at timing, state ownership, degraded modes, interface contracts and end-to-end validation.</p><b>Close integration gaps →</b></a>
-<a href="/solutions/robotics-motion-control.html" class="diagnostic-card"><span>ROBOTICS & MOTION</span><h3>The robot moves in the lab, but payload, heat, falls and real duty cycles expose the joints.</h3><p>Look at actuator sizing, servo bandwidth, EtherCAT timing, battery transients, EMC, safety and reliability growth.</p><b>Engineer robot reliability →</b></a>
-<a href="/solutions/industrial-networking.html" class="diagnostic-card"><span>DATA & NETWORK</span><h3>Intermittent faults disappear before logs explain what happened.</h3><p>Look at clock alignment, traffic deadlines, observability, stale data and recovery behavior.</p><b>Build diagnosable connectivity →</b></a>
-<a href="/solutions/engineering-consulting.html" class="diagnostic-card"><span>PROGRAM RISK</span><h3>Reviews are happening, but critical assumptions remain ownerless.</h3><p>Look at requirements quality, FMEA evidence, decision records, supplier boundaries and release criteria.</p><b>Structure the engineering decision →</b></a>
-</div>
-</div>
-</section>
-
 <section id="solution-area" class="solution-area section fade-up">
 <div class="container">
 <div class="section-title center">
@@ -53,6 +34,9 @@ eleventyComputed:
 {% for item in solutions.solution_area.items %}
 <details class="solution-item">
 <summary>
+{% if item.image %}
+<div class="solution-card-media"><img src="{{ item.image }}" alt="{{ item.image_alt or item.title }}" loading="lazy"></div>
+{% endif %}
 <div class="solution-icon">{{ solIcons[item.icon] | safe }}</div>
 <h3>{{ item.title }}</h3>
 <p>{{ item.description }}</p>
@@ -61,6 +45,8 @@ eleventyComputed:
 <p>{{ item.detail }}</p>
 {% if item.slug %}
 <a href="/solutions/{{ item.slug }}.html" class="card-detail-link">Read the full breakdown &rarr;</a>
+{% elseif item.anchor %}
+<a href="#{{ item.anchor }}" class="card-detail-link">View detailed capabilities &rarr;</a>
 {% endif %}
 </div>
 </details>
@@ -69,21 +55,91 @@ eleventyComputed:
 </div>
 </section>
 
-<section class="solution-deliverables section fade-up">
+<section class="solution-depth section fade-up">
 <div class="container">
-<div class="section-title center">
-<span>WHAT THE ENGAGEMENT PRODUCES</span>
-<h2>Engineering Evidence, Not Another Presentation</h2>
-<p>Every engagement is scoped around a decision your team must make and the evidence required to make it safely.</p>
+<div class="section-title center solution-depth-title">
+<span>DETAILED CAPABILITIES</span>
+<h2>What Each Solution Includes</h2>
+<p>Scope is adapted to the project stage, but every engagement is built around clear technical boundaries, usable outputs and measurable acceptance criteria.</p>
 </div>
-<div class="deliverable-grid">
-<div class="deliverable-card"><b>01</b><h3>Problem & Boundary Definition</h3><p>Operating envelope, failure signature, interface ownership, assumptions and measurable acceptance criteria.</p><span>Output: engineering brief + evidence plan</span></div>
-<div class="deliverable-card"><b>02</b><h3>Architecture & Design Review</h3><p>Cross-domain review of power, thermal, control, communications, safety, component and manufacturing risks.</p><span>Output: findings ranked by mechanism and impact</span></div>
-<div class="deliverable-card"><b>03</b><h3>Technology & Supplier Decision</h3><p>Application-specific comparison covering margin, qualification, integration effort, supply continuity and lifecycle.</p><span>Output: decision matrix + qualification gaps</span></div>
-<div class="deliverable-card"><b>04</b><h3>Validation & Root-Cause Plan</h3><p>Instrumentation, corner cases, fault injection, decision rules and traceability from requirement to evidence.</p><span>Output: executable DVP / investigation plan</span></div>
-<div class="deliverable-card"><b>05</b><h3>Integration & Commissioning Support</h3><p>End-to-end state, timing and protection verification under nominal, transient and degraded conditions.</p><span>Output: issue closure + commissioning evidence</span></div>
-<div class="deliverable-card"><b>06</b><h3>Production & Field Feedback Loop</h3><p>Supplier/process controls, traceability, telemetry and field-return learning fed back into the design baseline.</p><span>Output: control plan + corrective-action loop</span></div>
+
+<article class="solution-depth-block" id="engineering-design">
+<div class="solution-depth-image"><img src="/assets/images/editorial/engineering-design-review.png" alt="Engineering team reviewing system and hardware architecture" loading="lazy"></div>
+<div class="solution-depth-content">
+<span>01 · SYSTEM, SOFTWARE & HARDWARE</span>
+<h2>Engineering Design & Independent Review</h2>
+<p class="solution-depth-lead">For teams building a new product, inheriting an incomplete design or preparing for a customer milestone. We can own a defined engineering work package or review the existing baseline before risk reaches tooling, integration or release.</p>
+<div class="solution-capability-grid">
+<div><h3>System Engineering</h3><p>Stakeholder and system requirements, operating scenarios, architecture decomposition, interface ownership and requirement traceability.</p></div>
+<div><h3>Software Engineering</h3><p>Software requirements and architecture, component boundaries, state behavior, diagnostics, interfaces and verification strategy.</p></div>
+<div><h3>Hardware Engineering</h3><p>Schematic and architecture review, component margin, power, signal integrity, thermal, EMC, testability and manufacturability.</p></div>
+<div><h3>Automotive SPICE Alignment</h3><p>Practical alignment of engineering artifacts, reviews and evidence with the relevant ASPICE process expectations—not audit-only paperwork.</p></div>
 </div>
+<div class="solution-output"><b>Typical outputs</b><p>Requirements baseline · System/SW/HW architecture · Interface definitions · Review findings · Traceability matrix · Verification and validation plan</p></div>
+</div>
+</article>
+
+<article class="solution-depth-block solution-depth-block--reverse" id="prototype-supply">
+<div class="solution-depth-image"><img src="/assets/images/design-pcba.jpg" alt="PCBA prototype, schematic and electronic components" loading="lazy"></div>
+<div class="solution-depth-content">
+<span>02 · PROTOTYPE, PCBA & COMPONENTS</span>
+<h2>From Design Data To Testable Hardware</h2>
+<p class="solution-depth-lead">For programs that need to validate form, fit and function quickly—or secure a build when supplier lead time, BOM availability and manufacturing readiness are becoming the critical path.</p>
+<div class="solution-capability-grid">
+<div><h3>Rapid Prototyping</h3><p>3D-printed mechanical parts, enclosures, fixtures and engineering samples for fit checks, design iteration and functional testing.</p></div>
+<div><h3>PCBA Build</h3><p>Fabrication and assembly coordination from Gerber, BOM and placement data through DFM review, NPI build and inspection feedback.</p></div>
+<div><h3>Modules & Components</h3><p>Technical sourcing of electronic components and functional modules against specification, lifecycle, availability and qualification needs.</p></div>
+<div><h3>Supply Risk Control</h3><p>Alternative-part evaluation, supplier comparison, documentation gaps, delivery tracking and issue escalation around the project milestone.</p></div>
+</div>
+<div class="solution-output"><b>Typical outputs</b><p>Prototype parts · Assembled PCBAs · DFM findings · BOM and approved alternatives · Supplier decision matrix · Build and inspection records</p></div>
+</div>
+</article>
+
+<article class="solution-depth-block" id="factory-digitalization">
+<div class="solution-depth-image"><img src="/assets/images/case-smart-factory.jpg" alt="Automated factory line connected to ERP and MES operations" loading="lazy"></div>
+<div class="solution-depth-content">
+<span>03 · ERP, MES & FACTORY</span>
+<h2>Know When Spreadsheets Stop Scaling</h2>
+<p class="solution-depth-lead">ERP and MES are not signs that a company has become “professional.” They are control systems for specific coordination problems. Implemented too early, they freeze immature processes and create administration. Implemented too late, teams spend each week reconciling different versions of orders, inventory, WIP, quality and delivery status.</p>
+
+<div class="solution-stage-map">
+<div><b>STAGE 01</b><h3>Startup / Early Operation</h3><p>A small team can still coordinate through direct conversation and a controlled set of files.</p><strong>Do first:</strong><span>Define item codes, BOM ownership, project stages and one source of truth. A full ERP may be premature while the process changes every week.</span></div>
+<div><b>STAGE 02</b><h3>Scaling Across Projects</h3><p>More customers, projects and employees create shared-resource, purchasing and delivery conflicts.</p><strong>ERP starts earning its cost:</strong><span>Control order-to-cash, project budgets, procurement, inventory, capacity and financial commitments in one transaction model.</span></div>
+<div><b>STAGE 03</b><h3>Factory / Multi-Line Operation</h3><p>The plan exists in ERP, but supervisors still cannot see accurate WIP, downtime, genealogy or quality status from the shop floor.</p><strong>MES becomes necessary:</strong><span>Control execution by work order, operation, machine, material lot, operator and quality checkpoint as production happens.</span></div>
+</div>
+
+<div class="solution-decision-signals">
+<h3>Signals That The Current System Is Already Costing You</h3>
+<p class="solution-note">These are diagnostic triggers, not universal industry benchmarks. The right threshold depends on product complexity, regulation and production model.</p>
+<ul>
+<li><b>2+ manual re-entries</b><span>The same order, BOM or material movement is typed into multiple files or systems.</span></li>
+<li><b>3–5+ working days</b><span>Teams need several days to reconcile inventory, project cost or month-end operating data.</span></li>
+<li><b>&lt;97–98% inventory accuracy</b><span>The system quantity cannot be trusted for purchasing or production release without a physical check.</span></li>
+<li><b>&lt;85–90% schedule adherence</b><span>Planned completion dates repeatedly move because actual capacity, shortages and WIP are not visible together.</span></li>
+<li><b>Hours to trace a lot or serial number</b><span>Quality teams reconstruct genealogy from paper, chat messages and separate machine files.</span></li>
+<li><b>Next-day production visibility</b><span>Downtime, scrap and output are manually consolidated after the shift instead of supporting decisions during it.</span></li>
+</ul>
+</div>
+
+<div class="erp-mes-comparison">
+<h3>ERP And MES Solve Different Layers</h3>
+<div class="erp-mes-table">
+<div class="erp-mes-row erp-mes-row--head"><span>Decision layer</span><b>ERP</b><b>MES</b></div>
+<div class="erp-mes-row"><span>Primary question</span><p>What should the business buy, make, deliver and account for?</p><p>What is actually happening to this order, unit and operation now?</p></div>
+<div class="erp-mes-row"><span>Core objects</span><p>Customer orders, projects, BOMs, purchasing, inventory, capacity and cost.</p><p>Work orders, routing, WIP, machines, operators, parameters, defects and genealogy.</p></div>
+<div class="erp-mes-row"><span>Time horizon</span><p>Days, weeks, months and financial periods.</p><p>Shift, hour, cycle and event.</p></div>
+<div class="erp-mes-row"><span>What improves</span><p>Commitment visibility, material planning, project margin and cross-department control.</p><p>Schedule execution, traceability, quality evidence, downtime response and real production status.</p></div>
+</div>
+</div>
+
+<div class="solution-tradeoffs">
+<div class="solution-tradeoff solution-tradeoff--good"><span>WHEN IT CREATES VALUE</span><ul><li>Processes and master-data owners are defined.</li><li>Management agrees which system owns each record.</li><li>KPIs have operational definitions and accountable users.</li><li>Deployment is phased around measurable business pain.</li></ul></div>
+<div class="solution-tradeoff solution-tradeoff--bad"><span>WHEN IT MAKES THINGS WORSE</span><ul><li>Software is used to avoid deciding how the process should work.</li><li>Every department demands its spreadsheet be copied into the new system.</li><li>Bad BOM, routing and inventory data are migrated without cleanup.</li><li>Go-live is measured by features installed instead of decisions improved.</li></ul></div>
+</div>
+
+<div class="solution-output"><b>What ERP/MES will not fix by itself</b><p>Unclear process ownership · Invalid master data · Unstable BOMs and routings · Weak production discipline · Incentives that reward local optimization · Management decisions made outside the system</p></div>
+</div>
+</article>
 </div>
 </section>
 
@@ -91,22 +147,14 @@ eleventyComputed:
 <div class="container">
 <div class="section-title center">
 <span>HOW TO ENGAGE</span>
-<h2>Start At The Point Of Highest Risk</h2>
-<p>You do not need a fully written scope. Bring the symptom, requirement, failed test or decision that is blocking the program.</p>
+<h2>Start With The Outcome You Need</h2>
+<p>Bring us a product requirement, prototype demand or operational bottleneck. We will define the shortest practical path to delivery.</p>
 </div>
 <div class="engagement-steps">
-<div><strong>01</strong><h3>Frame</h3><p>We identify the physical or process boundary and the decision that needs evidence.</p></div>
-<div><strong>02</strong><h3>Interrogate</h3><p>We review data, design artifacts and assumptions across the interfaces where risk concentrates.</p></div>
-<div><strong>03</strong><h3>Resolve</h3><p>We provide prioritized actions, owners, validation criteria and supplier or implementation support.</p></div>
-<div><strong>04</strong><h3>Close</h3><p>We stay through verification so findings become released design or operating controls.</p></div>
+<div><strong>01</strong><h3>Define</h3><p>Clarify requirements, scope, interfaces, constraints and measurable acceptance criteria.</p></div>
+<div><strong>02</strong><h3>Design</h3><p>Build the technical solution, supply plan or enterprise-system implementation blueprint.</p></div>
+<div><strong>03</strong><h3>Deliver</h3><p>Execute engineering, prototype production, component supply or system deployment.</p></div>
+<div><strong>04</strong><h3>Validate</h3><p>Verify the delivered result, close issues and hand over the evidence and operating knowledge.</p></div>
 </div>
-</div>
-</section>
-
-<section class="cta">
-<div class="container" style="text-align:center">
-<h2>Bring Us The Failure Signature, Not A Polished Brief.</h2>
-<p>Share the requirement, test result, field symptom or architecture boundary your team cannot close with confidence.</p>
-<a href="/contact.html" class="btn btn-light">Talk To An Engineer</a>
 </div>
 </section>

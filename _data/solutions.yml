@@ -1,10 +1,10 @@
-seo_title: "Engineering Solutions | NexBridge Solutions"
-seo_description: "Engineering consulting, thermal management, AI infrastructure, industrial automation, networking, semiconductor sourcing and custom engineering."
+seo_title: "Engineering, Prototyping & Factory Solutions | NexBridge"
+seo_description: "System, software and hardware engineering; prototype and PCBA manufacturing; component supply; and ERP/MES implementation for enterprises and factories."
 
 page_header:
   eyebrow: "Solutions"
-  title: "Engineering Solutions, Not Just Products"
-  subtitle: "From thermal management to semiconductor sourcing, every solution starts with your problem, not our catalog."
+  title: "Three Solution Pillars. One Delivery Partner."
+  subtitle: "From system design to physical prototypes and connected factory operations, NexBridge helps turn requirements into deployable results."
 
 why:
   eyebrow: "WHY CHOOSE US"
@@ -55,6 +55,33 @@ journey_process:
       detail: "From prototype validation and design review, through qualification testing and production ramp, to long-term technical support — the relationship continues after the first shipment."
 
 solution_area:
+  eyebrow: "OUR THREE CORE SOLUTIONS"
+  title: "Design. Build. Transform."
+  subtitle: "Choose the capability your program needs today. We can support one work package or connect all three into an end-to-end engagement."
+  items:
+    - icon: "compass"
+      anchor: "engineering-design"
+      image: "/assets/images/editorial/engineering-design-review.png"
+      image_alt: "Engineering team reviewing system and hardware designs"
+      title: "System, Software & Hardware Engineering"
+      description: "Product and system design, plus independent design review across system, software and hardware domains aligned with Automotive SPICE."
+      detail: "Support from requirements and system architecture through software and hardware design, interface definition, traceability, verification planning and technical review. Engagements can cover a complete build or focus on an independent review of an existing design against Automotive SPICE expectations and project-specific quality, safety and performance targets."
+    - icon: "chip"
+      anchor: "prototype-supply"
+      image: "/assets/images/design-pcba.jpg"
+      image_alt: "PCBA prototype and electronic component design"
+      title: "Prototyping, PCBA & Component Supply"
+      description: "Rapid prototype manufacturing, 3D printing, PCBA fabrication and assembly, plus modules and electronic component supply."
+      detail: "A practical path from design files to testable hardware: mechanical samples and 3D-printed parts, PCB fabrication and assembly, engineering builds, module sourcing and component supply. We coordinate technical requirements, manufacturability, supplier selection, build quality and delivery so teams can validate sooner and prepare for scale."
+    - icon: "network"
+      anchor: "factory-digitalization"
+      image: "/assets/images/case-smart-factory.jpg"
+      image_alt: "Automated factory production line for ERP and MES integration"
+      title: "ERP, MES & Factory Digitalization"
+      description: "Consulting and implementation for enterprise and factory solutions, including ERP, MES and production-system integration."
+      detail: "We assess business and manufacturing processes, define the target architecture, select and configure the right solution, integrate operational data and support deployment. The goal is a usable system connecting planning, materials, production, quality and traceability—not a disconnected software installation."
+
+legacy_solution_area:
   eyebrow: "OUR EXPERTISE"
   title: "Engineering Solutions"
   subtitle: "Helping manufacturers solve complex engineering and industrial challenges."

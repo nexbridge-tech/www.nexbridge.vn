@@ -132,8 +132,3 @@ challenge_finder:
     - emoji: 💡
       label: Need Technical Advice
       link: /solutions/engineering-consulting.html
-cta:
-  title: Ready To Build Something Great?
-  text: Let's discuss your next engineering project.
-  button_text: Contact NexBridge
-  button_link: contact.html

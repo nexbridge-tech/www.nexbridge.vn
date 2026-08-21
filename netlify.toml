@@ -1,6 +1,7 @@
 [build]
   command = "npm run build"
   publish = "_site"
+  functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "20"
@@ -17,7 +18,7 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
-    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' https://identity.netlify.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://identity.netlify.com https://api.netlify.com; form-action 'self' https://api.web3forms.com; frame-ancestors 'self'; base-uri 'self'"
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' https://identity.netlify.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://identity.netlify.com https://api.netlify.com https://*.supabase.co; form-action 'self' https://api.web3forms.com; frame-ancestors 'self'; base-uri 'self'"
 
 # Explicit rewrites so clean URLs (without .html) always work reliably,
 # regardless of the "Pretty URLs" dashboard setting's behavior.
@@ -49,4 +50,19 @@
 [[redirects]]
   from = "/knowledge"
   to = "/knowledge.html"
+  status = 200
+
+[[redirects]]
+  from = "/login"
+  to = "/login.html"
+  status = 200
+
+[[redirects]]
+  from = "/register"
+  to = "/register.html"
+  status = 200
+
+[[redirects]]
+  from = "/account"
+  to = "/account.html"
   status = 200

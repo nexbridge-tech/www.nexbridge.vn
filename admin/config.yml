@@ -617,4 +617,3 @@ collections:
               - { label: "Legal Name (Vietnamese)", name: "legal_name", widget: "string" }
               - { label: "Legal Name (English)", name: "legal_name_en", widget: "string" }
               - { label: "Business Registration Number", name: "business_id", widget: "string" }
-              - { label: "Registered Date", name: "registered_date", widget: "string" }

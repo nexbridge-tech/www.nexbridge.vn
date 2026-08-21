@@ -18,6 +18,7 @@ module.exports = function (eleventyConfig) {
   // Never build these into pages - documentation only
   eleventyConfig.ignores.add("assets/**");
   eleventyConfig.ignores.add("ADMIN_SETUP.md");
+  eleventyConfig.ignores.add("MEMBER_LIBRARY_SETUP.md");
   eleventyConfig.ignores.add("README.md");
   eleventyConfig.ignores.add("node_modules/**");
 
@@ -54,6 +55,50 @@ module.exports = function (eleventyConfig) {
       topic,
       articles: articles
         .filter((item) => item.data.topic === topic)
+        .sort((a, b) => b.data.date - a.data.date),
+    })).filter((group) => group.articles.length > 0);
+  });
+
+  // Simple Knowledge library grouped around the three core solution pillars.
+  const KNOWLEDGE_SOLUTION_GROUPS = [
+    {
+      title: "System, Software & Hardware Engineering",
+      slug: "engineering-design",
+      description: "System architecture, software and hardware design, integration, validation and Automotive SPICE-aligned engineering practice.",
+      topics: [
+        "Renewable Energy & Grid Integration",
+        "Energy Storage Systems",
+        "Automotive & EV Power Electronics",
+        "Robotics & Motion Control",
+        "Engineering Consulting & Process",
+        "Thermal Management",
+        "AI Infrastructure",
+        "Career & Culture",
+      ],
+    },
+    {
+      title: "Prototyping, PCBA & Component Supply",
+      slug: "prototyping-supply",
+      description: "PCB design, component selection, prototype builds, manufacturing quality and supply-chain engineering.",
+      topics: ["PCB Design, Components & EMC", "Semiconductor & Manufacturing"],
+    },
+    {
+      title: "ERP, MES & Factory Digitalization",
+      slug: "factory-digitalization",
+      description: "Factory connectivity, industrial data, automation integration and the foundations required for ERP/MES deployment.",
+      topics: ["Industrial Networking & Automation"],
+    },
+  ];
+
+  eleventyConfig.addCollection("knowledgeBySolution", function (collectionApi) {
+    const articles = collectionApi
+      .getAll()
+      .filter((item) => item.filePathStem.startsWith("/content/knowledge/") && !item.data.draft);
+
+    return KNOWLEDGE_SOLUTION_GROUPS.map((group) => ({
+      ...group,
+      articles: articles
+        .filter((item) => group.topics.includes(item.data.topic))
         .sort((a, b) => b.data.date - a.data.date),
     })).filter((group) => group.articles.length > 0);
   });

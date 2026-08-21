@@ -1,73 +1,59 @@
 ---
 layout: base.njk
 permalink: "industries.html"
-eleventyComputed:
-  title: "{{ industries.seo_title }}"
-  description: "{{ industries.seo_description }}"
+title: "Technical Library | NexBridge Solutions"
+description: "A future library of downloadable engineering specifications, review templates and factory implementation guides from NexBridge."
 ---
+
 <section class="page-header">
 <div class="hero-glow"></div>
 <div class="container">
-<span class="hero-eyebrow">{{ industries.page_header.eyebrow }}</span>
-<h1>{{ industries.page_header.title }}</h1>
-<p>{{ industries.page_header.subtitle }}</p>
+<span class="hero-eyebrow">Technical Library</span>
+<h1>Engineering Documents Built For Real Work</h1>
+<p>A growing catalog of technical documents, templates and implementation guides for engineering teams and factories.</p>
 </div>
 </section>
 
-<section class="industries section fade-up">
+<section class="technical-library section fade-up">
 <div class="container">
-<div class="section-title">
-<span>{{ industries.industries.eyebrow }}</span>
-<h2>{{ industries.industries.title }}</h2>
-<p>{{ industries.industries.subtitle }}</p>
-</div>
-<div class="industry-grid">
-{% for card in industries.industries.cards %}
-<article class="industry-card">
-<img class="card-photo" loading="lazy" src="{{ card.image }}" alt="{{ card.title }}">
-<div class="industry-icon">{{ card.icon }}</div>
-<h3>{{ card.title }}</h3>
-<p>{{ card.description }}</p>
-</article>
-{% endfor %}
-</div>
-</div>
-</section>
-
-<section class="industry-overview section fade-up">
-<div class="container">
-<div class="section-title">
-<span>{{ industries.industry_overview.eyebrow }}</span>
-<h2>{{ industries.industry_overview.title }}</h2>
-</div>
-<div class="industry-list">
-{% for item in industries.industry_overview.items %}
+<div class="technical-library-intro">
 <div>
-<h3>{{ item.title }}</h3>
-<p>{{ item.description }}</p>
+<span>COMING SOON</span>
+<h2>From Free Knowledge To Ready-To-Use Technical Assets</h2>
 </div>
-{% endfor %}
+<p>Knowledge contains open articles and field notes. This library is being prepared for deeper, downloadable resources that teams can purchase and apply directly to projects.</p>
 </div>
-</div>
-</section>
 
-<section class="case-study section fade-up">
-<div class="container">
-<div class="section-title center">
-<span>{{ industries.case_study.eyebrow }}</span>
-<h2>{{ industries.case_study.title }}</h2>
-<p>{{ industries.case_study.subtitle }}</p>
-</div>
-<div class="case-grid">
-{% for card in industries.case_study.cards %}
-<article class="case-card">
-<img class="card-photo" loading="lazy" src="{{ card.image }}" alt="{{ card.title }}">
-<div class="case-tag">{{ card.tag }}</div>
-<h3>{{ card.title }}</h3>
-<p>{{ card.description }}</p>
-<a href="{{ card.link }}">{{ card.link_text }}</a>
+<div class="technical-document-grid">
+<article class="technical-document-category">
+<b>01</b>
+<span>DESIGN & REVIEW</span>
+<h3>Engineering Specifications & Review Packs</h3>
+<p>System requirement templates, architecture checklists, SW/HW design-review packs, traceability structures and Automotive SPICE-aligned working documents.</p>
+<div>Planned formats: PDF, DOCX, XLSX</div>
 </article>
-{% endfor %}
+
+<article class="technical-document-category">
+<b>02</b>
+<span>PROTOTYPE & SUPPLY</span>
+<h3>Manufacturing & Component Documents</h3>
+<p>Prototype build packages, PCBA review checklists, DFM/DFA guides, supplier qualification templates, BOM risk tools and component comparison sheets.</p>
+<div>Planned formats: PDF, XLSX, checklists</div>
+</article>
+
+<article class="technical-document-category">
+<b>03</b>
+<span>ERP, MES & FACTORY</span>
+<h3>Implementation Playbooks</h3>
+<p>Process-mapping templates, ERP/MES requirement packs, data-model references, integration checklists and factory deployment roadmaps.</p>
+<div>Planned formats: PDF, DOCX, XLSX</div>
+</article>
+</div>
+
+<div class="technical-library-note">
+<strong>Library status</strong>
+<p>Member access is being prepared. Create a free account to access member downloads as documents are released.</p>
+<div><a href="/register.html">Create free account &rarr;</a><a href="/knowledge.html">Browse Knowledge &rarr;</a></div>
 </div>
 </div>
 </section>

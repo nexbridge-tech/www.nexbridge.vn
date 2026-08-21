@@ -2,94 +2,74 @@
 layout: base.njk
 permalink: "knowledge.html"
 title: "Knowledge | NexBridge Solutions"
-description: "Engineering insights, field notes and technical guides from NexBridge."
+description: "Practical engineering articles organized around NexBridge's design, prototyping and factory digitalization solutions."
 ---
 
 <section class="page-header">
 <div class="hero-glow"></div>
 <div class="container">
 <span class="hero-eyebrow">Knowledge</span>
-<h1>Engineering Insights From The Field</h1>
-<p>Practical engineering analysis built around failure mechanisms, measurable evidence and decisions teams can apply before design freeze.</p>
+<h1>Practical Knowledge For Engineering Decisions</h1>
+<p>Articles and field notes organized around the same three solution areas we deliver.</p>
 </div>
 </section>
 
-<section id="blog" class="blog section fade-up">
+<section id="blog" class="knowledge-library section fade-up">
 <div class="container">
 
-<div class="knowledge-pillars">
-<div class="section-title center">
-<span>ENGINEERING PAIN-POINT MAP</span>
-<h2>Start With The Failure You Need To Prevent</h2>
-<p>Navigate by engineering decision—not by marketing category. Each knowledge stream connects symptoms to mechanisms, design controls and validation evidence.</p>
+<div class="knowledge-simple-intro">
+<div>
+<span>KNOWLEDGE LIBRARY</span>
+<h2>Browse By Solution Topic</h2>
 </div>
-<div class="pillar-grid">
-<a href="#blog" class="pillar-card" data-pillar-topic="Renewable Energy & Grid Integration"><b>01</b><h3>Renewable & Grid</h3><p>Curtailment, weak-grid stability, plant control, ride-through and wind–solar–BESS coordination.</p><span>Explore the stream →</span></a>
-<a href="#blog" class="pillar-card" data-pillar-topic="Energy Storage Systems"><b>02</b><h3>BESS Safety & Controls</h3><p>Thermal propagation, SOC/SOH, protection, EMS–BMS boundaries and commissioning failures.</p><span>Explore the stream →</span></a>
-<a href="#blog" class="pillar-card" data-pillar-topic="Automotive & EV Power Electronics"><b>03</b><h3>EV Power Electronics</h3><p>Motor control, inverter, PDU, OBC, DC-DC, 6-in-1 integration and vehicle fault behavior.</p><span>Explore the stream →</span></a>
-<a href="#blog" class="pillar-card" data-pillar-topic="PCB Design, Components & EMC"><b>04</b><h3>PCB, Components & EMC</h3><p>Part selection, derating, schematic decisions, layout, return paths and pre-compliance.</p><span>Explore the stream →</span></a>
-<a href="#blog" class="pillar-card" data-pillar-topic="Engineering Consulting & Process"><b>05</b><h3>Reliability Process</h3><p>Requirements, FMEA, design review, interfaces, field returns and evidence-based release.</p><span>Explore the stream →</span></a>
-<a href="#blog" class="pillar-card" data-pillar-topic="Semiconductor & Manufacturing"><b>06</b><h3>Industrialization</h3><p>Supplier qualification, PCBA process control, ESD, traceability and production drift.</p><span>Explore the stream →</span></a>
-<a href="#blog" class="pillar-card" data-pillar-topic="Robotics & Motion Control"><b>07</b><h3>Robotics & Motion</h3><p>Joint actuators, servo control, EtherCAT, power, thermal, safety, validation and fleet reliability.</p><span>Explore the stream →</span></a>
-</div>
+<p>Short, practical analysis for engineers and operational teams. Select a topic or search the complete library.</p>
 </div>
 
-<div class="section-title center">
-<span>FROM THE FIELD</span>
-<h2>Deep-Dive Engineering Library</h2>
-<p>Search by symptom, subsystem or engineering decision. Each article connects a real failure mechanism to design choices, measurable evidence and release criteria.</p>
-</div>
-
-<div class="knowledge-toolbar">
-
+<div class="knowledge-toolbar knowledge-toolbar--simple">
 <div class="knowledge-search">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-<input type="text" id="knowledgeSearchInput" placeholder="Search articles by title, keyword or topic…" aria-label="Search Knowledge articles">
+<input type="text" id="knowledgeSearchInput" placeholder="Search by title, keyword or topic..." aria-label="Search Knowledge articles">
 </div>
-
 <div class="topic-chips" id="topicChips">
 <button type="button" class="topic-chip active" data-topic="all">All Topics</button>
-<button type="button" class="topic-chip" data-topic="Renewable Energy &amp; Grid Integration">Renewable Energy &amp; Grid Integration</button>
-<button type="button" class="topic-chip" data-topic="Automotive &amp; EV Power Electronics">Automotive &amp; EV Power Electronics</button>
-<button type="button" class="topic-chip" data-topic="PCB Design, Components &amp; EMC">PCB Design, Components &amp; EMC</button>
-<button type="button" class="topic-chip" data-topic="Robotics &amp; Motion Control">Robotics &amp; Motion Control</button>
-<button type="button" class="topic-chip" data-topic="Engineering Consulting &amp; Process">Engineering Consulting &amp; Process</button>
-<button type="button" class="topic-chip" data-topic="Energy Storage Systems">Energy Storage Systems</button>
-<button type="button" class="topic-chip" data-topic="Semiconductor &amp; Manufacturing">Semiconductor &amp; Manufacturing</button>
-<button type="button" class="topic-chip" data-topic="Industrial Networking &amp; Automation">Industrial Networking &amp; Automation</button>
-<button type="button" class="topic-chip" data-topic="Career &amp; Culture">Career &amp; Culture</button>
-<button type="button" class="topic-chip" data-topic="Thermal Management">Thermal Management</button>
-<button type="button" class="topic-chip" data-topic="AI Infrastructure">AI Infrastructure</button>
+{% for group in collections.knowledgeBySolution %}
+<button type="button" class="topic-chip" data-topic="{{ group.title }}">{{ group.title }}</button>
+{% endfor %}
+</div>
 </div>
 
+<p class="knowledge-empty" id="knowledgeEmptyState" hidden>No articles match your search.</p>
+
+<div class="knowledge-groups knowledge-list-groups" id="blogGrid">
+{% for group in collections.knowledgeBySolution %}
+<section class="topic-group knowledge-list-group" data-topic-group="{{ group.title }}" id="{{ group.slug }}">
+<div class="topic-group-header knowledge-list-header">
+<div>
+<span>0{{ loop.index }}</span>
+<h2>{{ group.title }}</h2>
+<p>{{ group.description }}</p>
 </div>
-
-<p class="knowledge-empty" id="knowledgeEmptyState" hidden>No articles match your search. Try a different keyword or topic.</p>
-
-<div class="knowledge-groups" id="blogGrid">
-{% for group in collections.knowledgeByTopic %}
-<div class="topic-group" data-topic-group="{{ group.topic }}">
-
-<div class="topic-group-header">
-<h3>{{ group.topic }}</h3>
 <span class="topic-group-count">{{ group.articles.length }} article{% if group.articles.length != 1 %}s{% endif %}</span>
 </div>
 
-<div class="blog-grid">
+<div class="knowledge-article-list">
 {% for article in group.articles %}
-<a class="card"
-   data-search="{{ article.data.title | lower }} {{ article.data.excerpt | lower }} {{ article.data.tags | join(' ') | lower }}"
-   href="{{ article.url }}" style="text-decoration:none;color:inherit;display:block">
-<div class="card-photo-wrap"><img class="card-photo" loading="lazy" src="{{ article.data.image }}" alt="{{ article.data.title }}"></div>
-<div class="card-taxonomy"><span class="blog-tag">{{ article.data.tags[0] }}</span>{% if article.data.series %}<span class="card-series">{{ article.data.series }}</span>{% endif %}</div>
+<a class="card knowledge-list-item"
+   data-search="{{ article.data.title | lower }} {{ article.data.excerpt | lower }} {{ article.data.topic | lower }} {{ article.data.tags | join(' ') | lower }}"
+   href="{{ article.url }}">
+<div class="knowledge-list-main">
+<span>{{ article.data.topic }}</span>
 <h3>{{ article.data.title }}</h3>
 <p>{{ article.data.excerpt }}</p>
-<div class="blog-meta">{{ article.data.date | readableDate }}</div>
+</div>
+<div class="knowledge-list-meta">
+<time>{{ article.data.date | readableDate }}</time>
+<b>Read article &rarr;</b>
+</div>
 </a>
 {% endfor %}
 </div>
-
-</div>
+</section>
 {% endfor %}
 </div>
 

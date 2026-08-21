@@ -1,29 +1,9 @@
 ---
 layout: base.njk
 permalink: "index.html"
-title: "NexBridge Solutions | Connecting Global Technology With Industrial Excellence"
-description: "NexBridge bridges Vietnamese manufacturers with global technology partners to solve real engineering problems."
+title: "NexBridge Solutions | Engineering, Prototyping & Factory Digitalization"
+description: "NexBridge helps teams design systems, build prototypes, source PCBA and components, and deploy ERP/MES solutions while protecting project lead time."
 ---
-{% set icons = {
-  "server": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><circle cx="7" cy="7" r=".6" fill="currentColor" stroke="none"/><circle cx="7" cy="17" r=".6" fill="currentColor" stroke="none"/></svg>',
-  "chip": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="1.5"/><line x1="9" y1="2" x2="9" y2="6"/><line x1="15" y1="2" x2="15" y2="6"/><line x1="9" y1="18" x2="9" y2="22"/><line x1="15" y1="18" x2="15" y2="22"/><line x1="2" y1="9" x2="6" y2="9"/><line x1="2" y1="15" x2="6" y2="15"/><line x1="18" y1="9" x2="22" y2="9"/><line x1="18" y1="15" x2="22" y2="15"/></svg>',
-  "robot": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.2"/><path d="M6 15.8V11l6-3 5 2v3"/><circle cx="17" cy="8" r="2.2"/></svg>',
-  "thermometer": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a2 2 0 0 0-2 2v9.2a4 4 0 1 0 4 0V5a2 2 0 0 0-2-2z"/><line x1="12" y1="8" x2="12" y2="14"/></svg>',
-  "leaf": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c8 0 14-6 14-14V4h-2C8 4 4 10 4 18z"/><path d="M4 20 12 12"/></svg>',
-  "handshake": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l4-3 3 2 3-2 3 2 4-3"/><path d="M6 9l3 8 3-2 3 2 3-8"/></svg>',
-  "compass": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9l-2 6-6 2 2-6z"/></svg>',
-  "eye": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>',
-  "layers": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 3 3 8 12 13 21 8 12 3"/><polyline points="3 13 12 18 21 13"/></svg>',
-  "factory": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l6 4v-4l6 4V6l6 4v11z"/><line x1="3" y1="21" x2="21" y2="21"/></svg>',
-  "book": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5c2-1 5-1 7 0v14c-2-1-5-1-7 0z"/><path d="M22 5c-2-1-5-1-7 0v14c2-1 5-1 7 0z"/></svg>',
-  "info": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="16" x2="12" y2="11"/><circle cx="12" cy="8" r=".6" fill="currentColor" stroke="none"/></svg>',
-  "network": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>',
-  "mail": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>',
-  "globe": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>',
-  "puzzle": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h4V6a2 2 0 1 1 4 0v2h4a1 1 0 0 1 1 1v4h-2a2 2 0 1 0 0 4h2v3a1 1 0 0 1-1 1h-4v-2a2 2 0 1 0-4 0v2H5a1 1 0 0 1-1-1v-4h2a2 2 0 1 0 0-4H4z"/></svg>',
-  "shield": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>',
-  "trending": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg>'
-} %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,101 +11,164 @@ description: "NexBridge bridges Vietnamese manufacturers with global technology 
   "name": "NexBridge Solutions",
   "url": "https://nexbridge.vn",
   "logo": "https://nexbridge.vn/assets/logo/logo-lockup-light.svg",
-  "description": "NexBridge Solutions connects Vietnamese manufacturers and system integrators with global technology partners to solve real engineering problems, spanning semiconductors, thermal management, AI infrastructure and industrial automation.",
+  "description": "NexBridge Solutions provides system, software and hardware engineering, prototype and PCBA manufacturing support, component supply, and ERP/MES implementation.",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "No. 26, Alley 46 Chu Huy Man Street, Phuc Loi",
     "addressLocality": "Hanoi",
+    "postalCode": "10000",
     "addressCountry": "VN"
   },
-  "sameAs": [
-    "https://www.linkedin.com/company/nexbridge-technologies-solution"
-  ]
+  "sameAs": ["https://www.linkedin.com/company/nexbridge-technologies-solution"]
 }
 </script>
+
 <section class="hero-banner" id="home">
-
-    <div class="hero-glow"></div>
-
-    <div class="container">
-        <div class="hero-banner-inner">
-            <span class="hero-eyebrow">{{ home.hero.eyebrow }}</span>
-            <h1>
-                {{ home.hero.headline_before }} <span class="accent-line">{{ home.hero.headline_accent }}</span>
-                {{ home.hero.headline_after }}
-            </h1>
-            <p class="lead">{{ home.hero.lead }}</p>
-            <div class="hero-cta">
-                <a href="{{ home.hero.cta_primary_link }}" class="btn btn-light">{{ home.hero.cta_primary_text }}</a>
-                <a href="{{ home.hero.cta_secondary_link }}" class="btn btn-outline-light">{{ home.hero.cta_secondary_text }}</a>
-            </div>
-        </div>
-    </div>
-
+<div class="hero-timelapse" aria-hidden="true">
+<div class="hero-era hero-era--reconstruction"></div>
+<div class="hero-era hero-era--industrialization"></div>
+<div class="hero-era hero-era--high-tech"></div>
+<div class="hero-era hero-era--future"></div>
+<div class="hero-era hero-era--technology-panorama"></div>
+</div>
+<div class="hero-glow"></div>
+<div class="container">
+<div class="hero-banner-inner">
+<span class="hero-eyebrow">ENGINEERING · SUPPLY · DIGITALIZATION</span>
+<h1>Turn Engineering Requirements <span class="accent-line">Into Delivered Results</span></h1>
+<p class="lead">Design systems, build prototypes, secure critical components and deploy factory solutions—with one partner focused on technical closure, lead time and progress.</p>
+<div class="hero-cta">
+<a href="/solutions.html" class="btn btn-light">Explore Solutions</a>
+<a href="#start-here" class="btn btn-outline-light">Start With Your Challenge</a>
+</div>
+</div>
+</div>
 </section>
 
-<section class="home-pathways section" id="engineering-paths">
+<section class="home-positioning section">
 <div class="container">
-
-<div class="section-title center">
-<span>ENGINEERING DECISION PATHS</span>
-<h2>Start Where Your Program Is Losing Confidence</h2>
-<p>Choose the failure domain. Each path connects a solution brief with the deeper engineering analysis behind it.</p>
+<div class="home-positioning-layout">
+<div class="home-positioning-visual">
+<img src="/assets/images/editorial/engineering-design-review-nexbridge.png" alt="NexBridge engineering team reviewing schematic and PCB layout designs" loading="lazy">
+<div><strong>THE GAP WE CLOSE</strong><span>Between a technical decision and a delivered result</span></div>
 </div>
 
-<div class="home-path-grid">
-<article class="home-path-card"><span>01 · ENERGY & GRID</span><h3>Renewable plants and BESS that curtail, trip or miss dispatch</h3><p>Close weak-grid, PCS, EMS/BMS, protection, thermal-safety and commissioning gaps.</p><div><a href="/solutions/energy-storage-systems.html">Solution brief →</a><a href="/knowledge/renewable-plant-grid-integration-curtailment-trips.html">Technical deep dive →</a></div></article>
-<article class="home-path-card"><span>02 · EV POWER ELECTRONICS</span><h3>Motor control, inverter and 6-in-1 behavior that breaks at integration</h3><p>Resolve current-loop, transient, thermal, common-mode, PDU, OBC and DC-DC interactions.</p><div><a href="/solutions/engineering-consulting.html">Solution brief →</a><a href="/knowledge/six-in-one-pdu-obc-dcdc-inverter-integration.html">Technical deep dive →</a></div></article>
-<article class="home-path-card"><span>03 · PCB & EMC</span><h3>Boards that work on the bench but fail EMC, reliability or production</h3><p>Review component margin, switching loops, return paths, isolation, layout and supplier variation.</p><div><a href="/solutions/semiconductor.html">Solution brief →</a><a href="/knowledge/pcb-layout-emi-emc-return-paths-power-electronics.html">Technical deep dive →</a></div></article>
-<article class="home-path-card"><span>04 · THERMAL</span><h3>Systems that overheat, derate early or vary across production</h3><p>Connect real losses to interfaces, airflow, liquid cooling, tolerances and aged conditions.</p><div><a href="/solutions/thermal-management.html">Solution brief →</a><a href="/knowledge/thermal-interface-materials.html">Technical deep dive →</a></div></article>
-<article class="home-path-card"><span>05 · AUTOMATION & NETWORK</span><h3>Subsystems that pass alone but fail as one connected operation</h3><p>Engineer state ownership, timing, recovery, deterministic traffic and forensic observability.</p><div><a href="/solutions/automation.html">Solution brief →</a><a href="/knowledge/real-time-vs-best-effort-deterministic-factory-networks.html">Technical deep dive →</a></div></article>
-<article class="home-path-card"><span>06 · AI INFRASTRUCTURE</span><h3>Rack power and cooling that lose margin under real workloads</h3><p>Validate synchronized transients, bus impedance, coolant distribution and facility dependencies.</p><div><a href="/solutions/ai-infrastructure.html">Solution brief →</a><a href="/knowledge/gpu-rack-power-delivery-transient-load-behavior.html">Technical deep dive →</a></div></article>
-<article class="home-path-card"><span>07 · ROBOTICS & MOTION</span><h3>Humanoid and industrial robots that need to survive beyond the demo</h3><p>Close joint actuator, servo control, real-time network, battery, thermal, EMC, safety and industrialization gaps.</p><div><a href="/solutions/robotics-motion-control.html">Solution brief →</a><a href="/knowledge/humanoid-robot-joint-actuator-servo-validation.html">Technical deep dive →</a></div></article>
+<div class="home-positioning-copy">
+<span>WHY NEXBRIDGE</span>
+<h2>The Hard Part Is Usually Between Teams</h2>
+<p>Projects slow down when engineering, suppliers and operations work from different assumptions. NexBridge keeps the technical context intact across those handoffs so decisions become buildable, sourceable and deployable.</p>
+<div class="home-positioning-points">
+<div><b>01</b><h3>Context stays connected</h3><p>Requirements and constraints travel with the work—not as a disconnected handover.</p></div>
+<div><b>02</b><h3>Trade-offs become visible</h3><p>Technical risk, lead time and implementation effort are evaluated together.</p></div>
+<div><b>03</b><h3>Decisions reach closure</h3><p>Clear owners, evidence and acceptance criteria replace open-ended coordination.</p></div>
+</div>
+<a href="/solutions.html">See how we support delivery &rarr;</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="home-domains section">
+<div class="container">
+<div class="home-split-heading">
+<div><span>APPLIED ENGINEERING DOMAINS</span><h2>Built For Systems Where Interfaces Matter</h2></div>
+<p>Our delivery model is especially relevant where hardware, software, suppliers and validation must move together under demanding reliability constraints.</p>
 </div>
 
+<div class="home-domain-grid">
+<article class="home-domain-card">
+<img src="/assets/images/editorial/aerospace-avionics-integration.png" alt="Aerospace engineers integrating satellite avionics hardware" loading="lazy">
+<div class="home-domain-overlay"></div>
+<div class="home-domain-content">
+<span>AEROSPACE & AVIONICS</span>
+<h3>High-Reliability Electronics From Requirement To Qualification</h3>
+<p>System architecture, avionics HW/SW interfaces, traceability, prototype builds, component control and verification planning.</p>
+<div><b>Systems Engineering</b><b>Avionics</b><b>Qualification</b></div>
+</div>
+</article>
+
+<article class="home-domain-card">
+<img src="/assets/images/editorial/humanoid-robotics-validation.png" alt="Humanoid robotics engineering and validation" loading="lazy">
+<div class="home-domain-overlay"></div>
+<div class="home-domain-content">
+<span>ROBOTICS & MOTION</span>
+<h3>Reliable Motion Beyond The Prototype Demo</h3>
+<p>Joint actuators, servo control, real-time communication, power, thermal, safety, validation and industrialization.</p>
+<div><b>Motion Control</b><b>Embedded Systems</b><b>Industrialization</b></div>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<section class="home-challenges section" id="start-here">
+<div class="container">
+<div class="home-split-heading">
+<div><span>START WITH THE BLOCKER</span><h2>What Is Holding The Project Back?</h2></div>
+<p>Choose the situation closest to your current problem. We will help define the right engineering, supply or implementation path.</p>
+</div>
+
+<div class="home-problem-grid">
+<a href="/contact.html"><b>01</b><h3>Requirements are still unclear</h3><p>Turn business or product goals into an actionable technical baseline.</p><span>Design & architecture</span></a>
+<a href="/contact.html"><b>02</b><h3>System, SW and HW do not align</h3><p>Close interface, ownership and integration gaps before they reach validation.</p><span>Engineering integration</span></a>
+<a href="/contact.html"><b>03</b><h3>The design needs an independent review</h3><p>Find technical, process and manufacturability risks before release or tooling.</p><span>Design review · ASPICE</span></a>
+<a href="/contact.html"><b>04</b><h3>A prototype is needed quickly</h3><p>Coordinate 3D parts, engineering samples and testable hardware builds.</p><span>Rapid prototyping</span></a>
+<a href="/contact.html"><b>05</b><h3>PCBA or components threaten lead time</h3><p>Resolve sourcing, alternative-part, manufacturing and delivery constraints.</p><span>PCBA & supply</span></a>
+<a href="/contact.html"><b>06</b><h3>Factory data is fragmented</h3><p>Connect ERP, MES, equipment and quality data around the real workflow.</p><span>Factory digitalization</span></a>
+<a class="home-problem-card--wide" href="/contact.html"><b>07</b><h3>The project is slipping and the next decision is unclear</h3><p>Expose the critical path, assign owners and convert open issues into measurable closure actions.</p><span>Lead-time recovery & delivery support</span></a>
+</div>
+</div>
+</section>
+
+<section class="home-delivery section">
+<div class="container">
+<div class="home-delivery-layout">
+<div class="home-delivery-copy">
+<span>LEAD TIME & PROGRESS</span>
+<h2>Reduce Waiting Between Decisions</h2>
+<p>Lead time is rarely lost in one dramatic event. It disappears between unclear requirements, supplier handoffs, late reviews and unresolved ownership. We make those gaps visible and work them in parallel.</p>
+<a href="/contact.html" class="btn btn-light">Discuss A Delivery Blocker</a>
+</div>
+<div class="home-delivery-steps">
+<div><b>01</b><h3>Define the critical path</h3><p>Agree scope, dependencies, owners and acceptance criteria.</p></div>
+<div><b>02</b><h3>Run workstreams in parallel</h3><p>Coordinate design, sourcing and implementation without waiting for serial handoffs.</p></div>
+<div><b>03</b><h3>Validate earlier</h3><p>Use reviews and prototypes to expose risk before release or deployment.</p></div>
+<div><b>04</b><h3>Track closure, not activity</h3><p>Report decisions, evidence and blockers against the delivery milestone.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="home-partners section">
+<div class="container">
+<div class="home-partner-layout">
+<div class="home-partner-copy">
+<span>DELIVERY NETWORK</span>
+<h2>Partners Extend What We Can Deliver</h2>
+<p>NexBridge combines engineering ownership with a growing network of manufacturers and technology suppliers. We select partners against the application, quality requirements and delivery plan—not simply a catalog.</p>
+<a href="/partners.html">View the partner network &rarr;</a>
+</div>
+<div class="home-partner-wall">
+{% for partner in partners.brands.items %}
+<a href="{{ partner.link }}" target="_blank" rel="noopener"><img src="/{{ partner.image }}" alt="{{ partner.name }}" loading="lazy"><span>{{ partner.name }}</span></a>
+{% endfor %}
+</div>
+</div>
 </div>
 </section>
 
 <section class="home-knowledge section">
 <div class="container">
-
-<div class="section-title center">
-<span>FROM THE KNOWLEDGE SYSTEM</span>
-<h2>Read The Failure Mechanism Before You Choose The Fix</h2>
-<p>Cornerstone guides designed for engineering reviews, architecture decisions and validation planning.</p>
+<div class="home-split-heading">
+<div><span>KNOWLEDGE</span><h2>Use The Lesson Before It Becomes A Delay</h2></div>
+<p>Practical engineering analysis connected to the same design, supply and factory problems we help solve.</p>
 </div>
 
-<div class="home-featured-grid">
-<a class="home-featured-card home-featured-card--wide" href="/knowledge/bess-thermal-runaway-detection-protection-coordination.html"><img src="/assets/images/editorial/bess-commissioning.png" alt="BESS commissioning and protection"><div><span>BESS SAFETY & CONTROLS</span><h3>Thermal Runaway: Detection Is Not Protection Until The Whole Chain Works</h3><p>Sensor placement, BMS logic, isolation, ventilation and emergency response as one timed system.</p></div></a>
-<a class="home-featured-card" href="/knowledge/ev-motor-control-current-loop-torque-ripple-instability.html"><img src="/assets/images/editorial/ev-motor-control-validation.png" alt="EV motor control validation"><div><span>EV MOTOR CONTROL</span><h3>Current Loops, Torque Ripple And Calibration Traps</h3></div></a>
-<a class="home-featured-card" href="/knowledge/component-selection-derating-automotive-power-design.html"><img src="/assets/images/editorial/electronics-manufacturing.png" alt="Automotive electronics component selection"><div><span>COMPONENT ENGINEERING</span><h3>Derating, Parasitics And Supply Risk Beyond The Datasheet</h3></div></a>
+<div class="home-knowledge-list">
+<a href="/knowledge/design-review-that-only-reviews-the-slides.html"><span>DESIGN & REVIEW</span><h3>The Design Review That Only Reviews The Slides</h3><p>How to turn a meeting into evidence, decisions and risk closure.</p><b>Read article &rarr;</b></a>
+<a href="/knowledge/supplier-qualification-gaps-that-show-up-at-volume.html"><span>PROTOTYPE & SUPPLY</span><h3>Supplier Qualification Gaps That Show Up At Volume</h3><p>What early samples fail to reveal about process and production variation.</p><b>Read article &rarr;</b></a>
+<a href="/knowledge/smart-factory-integration.html"><span>ERP, MES & FACTORY</span><h3>Where Smart Factory Integration Actually Fails</h3><p>The gaps between equipment, networks, data ownership and operations.</p><b>Read article &rarr;</b></a>
 </div>
-<div class="home-library-link"><a href="/knowledge.html" class="btn btn-outline">Explore The Full Knowledge Library →</a></div>
-
-</div>
-</section>
-
-<section class="challenge-finder section">
-<div class="container">
-
-<div class="section-title center">
-<span>{{ home.challenge_finder.eyebrow }}</span>
-<h2>{{ home.challenge_finder.title }}</h2>
-<p>{{ home.challenge_finder.subtitle }}</p>
-</div>
-
-<div class="finder-grid">
-{% for chip in home.challenge_finder.chips %}
-<a href="{{ chip.link }}">{{ chip.label }} <span>→</span></a>
-{% endfor %}
-</div>
-
-</div>
-</section>
-
-<section class="cta">
-<div class="container">
-<h2>{{ home.cta.title }}</h2>
-<p>{{ home.cta.text }}</p>
-<a href="{{ home.cta.button_link }}" class="btn">{{ home.cta.button_text }}</a>
+<div class="home-library-link"><a href="/knowledge.html">Browse all Knowledge articles &rarr;</a></div>
 </div>
 </section>

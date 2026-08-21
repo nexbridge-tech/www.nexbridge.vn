@@ -1,0 +1,17 @@
+---
+layout: base.njk
+permalink: "account.html"
+title: "My Technical Library | NexBridge Solutions"
+description: "Access technical documents available to your NexBridge member account."
+memberPage: true
+noindex: true
+---
+<section class="member-dashboard section">
+<div class="container">
+<div class="member-dashboard-header"><div><span>MEMBER ACCOUNT</span><h1>My Technical Library</h1><p id="memberIdentity">Checking your account...</p></div><button type="button" id="memberLogout" class="btn btn-outline">Sign Out</button></div>
+<div class="member-config-warning" data-member-config-warning hidden>Member access is not configured yet. Add the Supabase environment variables before testing the dashboard.</div>
+<div id="memberSignedOut" class="member-empty" hidden><h2>Sign in to continue</h2><p>Your documents and access rights are shown after authentication.</p><a href="/login.html" class="btn btn-primary">Sign In</a></div>
+<div id="memberDocuments" class="member-document-grid" hidden></div>
+<div id="memberDocumentsEmpty" class="member-empty" hidden><h2>No documents yet</h2><p>Free member resources and purchased documents will appear here when they are assigned to your account.</p><a href="/industries.html" class="btn btn-outline">Browse Technical Library</a></div>
+</div>
+</section>

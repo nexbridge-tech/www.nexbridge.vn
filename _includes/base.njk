@@ -2,6 +2,7 @@
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{{ title }}</title>
 <meta name="description" content="{{ description or excerpt }}">
+{% if noindex %}<meta name="robots" content="noindex,nofollow">{% endif %}
 <link rel="canonical" href="https://nexbridge.vn{{ page.url }}">
 <meta property="og:type" content="{% if layout == 'article.njk' %}article{% else %}website{% endif %}">
 <meta property="og:site_name" content="NexBridge Solutions">
@@ -36,7 +37,7 @@
 
 <li><a href="/solutions.html"{% if page.url and "/solutions" in page.url %} class="active"{% endif %}>Solutions</a></li>
 
-<li><a href="/industries.html"{% if page.url == "/industries.html" %} class="active"{% endif %}>Industries</a></li>
+<li><a href="/industries.html"{% if page.url == "/industries.html" %} class="active"{% endif %}>Technical Library</a></li>
 
 <li><a href="/knowledge.html"{% if page.url and "/knowledge" in page.url %} class="active"{% endif %}>Knowledge</a></li>
 
@@ -44,6 +45,7 @@
 
 </ul>
 </nav>
+<a href="/account.html" class="member-nav-link" aria-label="Member account">Member</a>
 <button type="button" class="search-trigger" id="siteSearchTrigger" aria-label="Search the site">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
 </button>
@@ -72,4 +74,9 @@
 <span>&copy; NexBridge Solutions &middot; Business ID 0111595881</span>
 </div></footer>
 <script src="/script.js"></script>
+{% if memberPage %}
+<script>window.NEXBRIDGE_MEMBER_CONFIG={url:"{{ members.supabaseUrl }}",key:"{{ members.supabasePublishableKey }}"};</script>
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script src="/assets/js/member-auth.js"></script>
+{% endif %}
 </body></html>
